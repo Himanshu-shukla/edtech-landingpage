@@ -1,141 +1,141 @@
 import React from 'react';
-import { XCircle, Smile } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { XCircle, CheckCircle2, Sparkles, AlertTriangle } from 'lucide-react';
 
 const ComparisonSection = () => {
   const comparisonData = [
     {
-      bad: "Endless theory, piles of textbooks 📚",
+      bad: "Endless theory, piles of textbooks",
       good: (
         <>
           Hands-on, real-world projects that{" "}
-          <span className="font-bold italic text-orange-900">empower your career</span> 🛠️
+          <span className="text-white font-semibold">empower your career</span>
         </>
       ),
     },
     {
-      bad: "Memorizing formulas without context 🧠",
+      bad: "Memorizing formulas without context",
       good: (
         <>
           Simplified tools that boost productivity,{" "}
-          <span className="font-bold italic text-orange-900">not just tasks</span> 🚀
+          <span className="text-white font-semibold">not just tasks</span>
         </>
       ),
     },
     {
-      bad: "Months of coding before you're ready to work 💻",
+      bad: "Months of coding before you're ready to work",
       good: (
         <>
           Build advanced analytics{" "}
-          <span className="font-bold italic text-orange-900">in minutes, not months</span> ⏱️
+          <span className="text-white font-semibold">in minutes, not months</span>
         </>
       ),
     },
     {
-      bad: "Years spent just to land junior roles 🕰️",
+      bad: "Years spent just to land junior roles",
       good: (
         <>
           Become job-ready in 90 days{" "}
-          <span className="font-bold italic text-orange-900">with real skills</span> 💼
+          <span className="text-white font-semibold">with real skills</span>
         </>
       ),
     },
     {
-      bad: "Low-paying jobs with no clear growth 📉",
+      bad: "Low-paying jobs with no clear growth",
       good: (
         <>
           Direct access to{" "}
-          <span className="font-bold italic text-orange-900">six-figure career opportunities</span> 💰
+          <span className="text-white font-semibold">six-figure career opportunities</span>
         </>
       ),
     },
     {
-      bad: "Limited job support, hoping someone will help 🤷‍♂️",
+      bad: "Limited job support, hoping someone will help",
       good: (
         <>
           Real-time placement support with{" "}
-          <span className="font-bold italic text-orange-900">expert guidance</span> 🗺️
+          <span className="text-white font-semibold">expert guidance</span>
         </>
       ),
     },
   ];
 
   return (
-    <section className="relative py-16 px-4 bg-slate-50 font-sans overflow-hidden">
-      {/* Background Grid Pattern (Consistent with theme) */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
+    <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
+      
+      {/* Aceternity Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
+        
         {/* Main Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-900 mb-2 leading-tight">
-            The Fast Track to High-Paying
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-sm font-medium mb-6">
+            <Sparkles className="w-4 h-4 text-orange-500" />
+            <span>The Career Accelerator</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+            The Fast Track to High-Paying <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-red-500">
+              Agentic AI Careers
+            </span>
           </h2>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-900 uppercase tracking-wide">
-            Agentic AI Careers
-          </h2>
-        </div>
+        </motion.div>
 
-        {/* Comparison Table Card */}
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 md:p-10">
+        {/* Comparison Table */}
+        <div className="relative bg-neutral-900/50 backdrop-blur-sm rounded-3xl border border-neutral-800 p-6 md:p-12 shadow-2xl">
           
-          {/* Table Header */}
-          <h3 className="text-center text-lg md:text-xl font-bold text-slate-700 mb-8">
-            Traditional Methods vs. Agentic AI-Powered Approach
-          </h3>
+          {/* Central Glowing Divider (Desktop) */}
+          <div className="hidden md:block absolute left-1/2 top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-neutral-700 to-transparent -translate-x-1/2"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 relative">
-            
-            {/* Vertical Divider (Desktop only) */}
-            <div className="hidden md:block absolute left-1/2 top-10 bottom-0 w-px bg-slate-200 -translate-x-1/2"></div>
-
-            {/* Column Headers */}
-            <div className="mb-2 md:mb-4">
-              <div className="bg-purple-100 text-purple-700 font-bold text-center py-3 rounded-lg border border-purple-200 shadow-sm">
-                Outdated Approach
-              </div>
+          {/* Column Headers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 mb-10">
+            <div className="flex items-center justify-center gap-2 text-neutral-500 font-bold text-lg">
+              <AlertTriangle className="w-5 h-5 text-neutral-500" />
+              The Outdated Approach
             </div>
-            
-            <div className="mb-2 md:mb-4">
-              <div className="bg-orange-100 text-orange-800 font-bold text-center py-3 rounded-lg border border-orange-200 shadow-sm">
-                Agentic AI-Powered Approach
-              </div>
+            <div className="flex items-center justify-center gap-2 text-orange-400 font-bold text-lg">
+              <Sparkles className="w-5 h-5 text-orange-400" />
+              The Agentic AI Way
             </div>
+          </div>
 
-            {/* Rows Mapping */}
+          {/* Rows */}
+          <div className="flex flex-col gap-6">
             {comparisonData.map((row, index) => (
-              <React.Fragment key={index}>
-                
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 group"
+              >
                 {/* Left Side (Bad) */}
-                <div className="flex items-center gap-3 group">
-                  <XCircle className="w-8 h-8 text-red-500 flex-shrink-0 group-hover:scale-110 transition-transform" strokeWidth={2} />
-                  <div className="flex-1 bg-purple-50 border border-purple-200 text-slate-700 p-4 rounded-lg text-sm md:text-base leading-snug shadow-sm">
+                <div className="flex items-start gap-4 p-4 rounded-xl transition-colors duration-300 md:group-hover:bg-neutral-900/50">
+                  <XCircle className="w-6 h-6 text-neutral-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-neutral-500 text-sm md:text-base leading-relaxed">
                     {row.bad}
-                  </div>
+                  </p>
                 </div>
 
                 {/* Right Side (Good) */}
-                <div className="flex items-center gap-3 md:flex-row-reverse group">
-                  {/* Note: Icon is on the right for desktop visual balance, or can be left. 
-                      Based on image, icon is to the RIGHT of the box. */}
-                   <div className="w-8 h-8 flex-shrink-0 bg-yellow-400 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                      <Smile className="w-6 h-6 text-yellow-900" strokeWidth={2.5} />
-                   </div>
-                  <div className="flex-1 bg-orange-50 border border-orange-200 text-orange-900 p-4 rounded-lg text-sm md:text-base leading-snug shadow-sm">
+                <div className="relative flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20 shadow-[0_0_20px_-5px_rgba(249,115,22,0.1)] transition-all duration-300 md:group-hover:border-orange-500/40 md:group-hover:shadow-[0_0_25px_-5px_rgba(249,115,22,0.2)]">
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.5)] hidden md:block"></div>
+                  <CheckCircle2 className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-neutral-300 text-sm md:text-base leading-relaxed">
                     {row.good}
-                  </div>
+                  </p>
                 </div>
-
-              </React.Fragment>
+              </motion.div>
             ))}
-
           </div>
+
         </div>
       </div>
     </section>

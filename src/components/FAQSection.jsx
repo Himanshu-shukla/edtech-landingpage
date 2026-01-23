@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { PlusCircle, MinusCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Sparkles } from 'lucide-react';
 
 const FAQSection = () => {
-  // JSON Data Source
   const faqData = [
     {
       id: 1,
@@ -21,21 +21,34 @@ const FAQSection = () => {
     }
   ];
 
-  // State to track which accordion item is open (defaulting to the first one)
   const [openIndex, setOpenIndex] = useState(0);
 
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-
   return (
-    <section className="py-20 px-4 bg-white font-sans border-t border-slate-100">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
+      
+      {/* Background Ambient Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-indigo-500/10 blur-[100px] pointer-events-none rounded-full" />
+
+      <div className="relative z-10 max-w-3xl mx-auto">
         
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center text-slate-900 mb-12">
-          Still Have Doubts?
-        </h2>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
+            <Sparkles className="w-4 h-4" />
+            <span>Common Questions</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            Still Have Doubts?
+          </h2>
+          <p className="text-neutral-400 text-lg">
+            Everything you need to know about the Agentic AI Bootcamp.
+          </p>
+        </motion.div>
 
         {/* Accordion List */}
         <div className="flex flex-col gap-4">
@@ -43,41 +56,62 @@ const FAQSection = () => {
             const isOpen = openIndex === index;
 
             return (
-              <div key={item.id} className="w-full">
-                
-                {/* Question Header (Clickable) */}
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`group border rounded-2xl transition-all duration-300 overflow-hidden ${
+                  isOpen 
+                    ? 'bg-neutral-900 border-indigo-500/50 shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)]' 
+                    : 'bg-neutral-900/50 border-neutral-800 hover:border-neutral-700'
+                }`}
+              >
+                {/* Question Header */}
                 <button
-                  onClick={() => toggleAccordion(index)}
-                  className={`w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors duration-300 ${
-                    isOpen ? 'bg-[#1e2f65]' : 'bg-[#1e2f65] hover:bg-[#2a4185]'
-                  }`}
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  className="w-full flex items-center justify-between p-6 text-left transition-colors duration-300"
                 >
-                  <span className="text-white font-bold text-lg md:text-xl pr-8">
+                  <span className={`font-semibold text-lg md:text-xl transition-colors duration-300 ${
+                    isOpen ? 'text-indigo-400' : 'text-white group-hover:text-neutral-200'
+                  }`}>
                     {item.question}
                   </span>
                   
-                  {/* Icon Toggle */}
-                  <div className="flex-shrink-0 text-white">
-                    {isOpen ? (
-                      <MinusCircle className="w-6 h-6 md:w-7 md:h-7 fill-white text-[#1e2f65]" />
-                    ) : (
-                      <PlusCircle className="w-6 h-6 md:w-7 md:h-7 fill-white text-[#1e2f65]" />
-                    )}
-                  </div>
+                  {/* Rotating Icon */}
+                  <motion.div
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${
+                      isOpen 
+                        ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400' 
+                        : 'bg-neutral-800 border-neutral-700 text-neutral-400 group-hover:bg-neutral-700'
+                    }`}
+                  >
+                    <Plus className="w-5 h-5" />
+                  </motion.div>
                 </button>
 
-                {/* Answer Content (Animated Height) */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out bg-slate-50 ${
-                    isOpen ? 'max-h-96 opacity-100 border border-t-0 border-slate-200' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <div className="p-6 md:p-8 text-slate-700 leading-relaxed font-medium">
-                    {item.answer}
-                  </div>
-                </div>
+                {/* Answer Content with AnimatePresence */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-6 pb-6 text-neutral-400 leading-relaxed text-base">
+                        <div className="pt-2 border-t border-neutral-800/50">
+                          {item.answer}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              </div>
+              </motion.div>
             );
           })}
         </div>
