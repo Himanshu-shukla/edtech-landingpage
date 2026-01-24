@@ -37,7 +37,7 @@ const CurriculumSection = () => {
       dayLabel: "PHASE 02",
       icon: <GitBranch className="w-4 h-4" />,
       title: "Multi-Agent Swarms & Deployment",
-      imageSrc: "https://images.unsplash.com/photo-1664382953518-4a664ab8a8c9?q=80&w=1200&auto=format&fit=crop",
+      imageSrc: "https://miro.medium.com/v2/resize:fit:2000/1*J-WePR99V191s1cNInJ7NA.png",
       items: [
         {
           id: 1,

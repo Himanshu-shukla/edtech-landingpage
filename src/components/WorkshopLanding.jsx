@@ -67,7 +67,7 @@ const WorkshopLanding = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent z-10"></div>
               {/* Updated placeholder image to something more "Agentic/Tech" focused */}
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop" 
+                src="https://static.wixstatic.com/media/3cd83b_272809dcc1e14cd78dd6a235eaf3a4ed~mv2.gif" 
                 alt="Agentic AI Workflow" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80"
               />
