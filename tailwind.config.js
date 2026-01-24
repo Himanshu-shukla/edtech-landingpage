@@ -1,15 +1,21 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     extend: {
-      keyframes: {
-        shimmer: {
-          '0%': { backgroundPosition: '200% 0' },
-          '100%': { backgroundPosition: '-200% 0' },
-        },
-      },
       animation: {
-        shimmer: 'shimmer 2s linear infinite',
+        marquee: 'marquee 25s linear infinite',
+        'marquee-reverse': 'marquee-reverse 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
     },
   },
-}
+};
