@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, Zap, ShieldCheck, Cpu } from 'lucide-react';
 
+// 1. IMPORT the video file directly. 
+// This tells Vite to include it in the 'dist' folder during deployment.
+import whatsappVideo from '../assets/Video_Generation_for_WhatsApp_Chat.mp4';
+
 const VideoShowcase = () => {
   return (
     <section className="relative py-24 px-4 bg-neutral-950 overflow-hidden font-sans">
@@ -29,7 +33,7 @@ const VideoShowcase = () => {
           </p>
         </motion.div>
 
-        {/* 3D Container (Aceternity Style) */}
+        {/* 3D Video Container */}
         <motion.div 
           initial={{ opacity: 0, rotateX: 15, scale: 0.9 }}
           whileInView={{ opacity: 1, rotateX: 0, scale: 1 }}
@@ -43,24 +47,26 @@ const VideoShowcase = () => {
             <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
             <div className="w-3 h-3 rounded-full bg-emerald-500/50" />
             <span className="ml-4 text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
-              Live Flow: WhatsApp_Auto_Logic.gif
+              Live Flow: WhatsApp_Auto_Logic.v4
             </span>
           </div>
 
-          {/* The GIF Element (Replacing Video) */}
-          <img 
-            src="../src/assets/whatsapp.gif" 
-            alt="WhatsApp Automation Demo"
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-          />
+          {/* The Video Element */}
+          <video 
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            key={whatsappVideo} // Helps React handle the source update on mount
+          >
+            {/* 2. Use the imported variable as the src */}
+            <source src={whatsappVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-          {/* Scanline / Digital Overlay for Realism */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] bg-[size:100%_4px,3px_100%] pointer-events-none z-10" />
-
-          {/* Inner Glow Border */}
           <div className="absolute inset-0 rounded-[2.5rem] border-[1px] border-white/5 pointer-events-none z-30" />
           
-          {/* Bottom Controls / Info Bar */}
           <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black via-black/40 to-transparent z-20 flex justify-between items-end">
              <div className="flex gap-4">
                 <MetricSmall label="Latency" value="240ms" />
@@ -73,13 +79,11 @@ const VideoShowcase = () => {
           </div>
         </motion.div>
 
-        {/* Feature Highlights beneath GIF */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 w-full">
           <Feature icon={<Cpu />} title="Reasoning Loops" text="Agents analyze context before responding." />
           <Feature icon={<Play />} title="HITL Ready" text="Seamless handoff to human experts." />
           <Feature icon={<ShieldCheck />} title="Zero Leakage" text="Secure, end-to-end data encryption." />
         </div>
-
       </div>
     </section>
   );
