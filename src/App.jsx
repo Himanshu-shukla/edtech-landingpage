@@ -15,12 +15,16 @@ import TestimonialSection from './components/TestimonialSection.jsx'
 import InstructorSection from './components/InstructorSection.jsx'
 import IrreplaceableSkillsSection from './components/IrreplaceableSkillsSection.jsx'
 import FAQSection from './components/FAQSection.jsx'
+import FoundryHero from './components/FoundryHero.jsx'
+import Navbar from './components/navbar.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Navbar/>
+    <FoundryHero/>
       <WorkshopLanding />
       <CareerWarningSection />
       <AlumniSection />
@@ -31,7 +35,7 @@ function App() {
       <ComparisonSection />
       <IndustryGrowthSection />
       <TestimonialSection />
-      <InstructorSection />
+      {/* <InstructorSection /> */}
       <IrreplaceableSkillsSection />
       <FAQSection />
     </>

@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Sparkles } from 'lucide-react';
+import { Plus, Sparkles, Zap, ShieldCheck, Target } from 'lucide-react';
 
 const FAQSection = () => {
   const faqData = [
     {
       id: 1,
-      question: "What if I have zero technical background?",
-      answer: "Our bootcamp is specifically designed for non-technical professionals. We start from absolute basics and use plain language – no coding experience required. We focus on practical applications rather than technical theory."
+      question: "Is this bootcamp for developers only?",
+      icon: <Target className="w-4 h-4 text-emerald-400" />,
+      answer: "No. We cater to two tracks: Business Leaders who need to orchestrate 'Agentic Workforces' to cut costs (like Enterprises), and Tech Professionals who want to master LangGraph, CrewAI, and MCP servers. We bridge the gap between business logic and autonomous execution."
     },
     {
       id: 2,
-      question: "What if I've tried learning AI before and failed?",
-      answer: "This program is different because we focus on outcome-based learning. Instead of boring theory, you'll be building real agents from Day 1 using no-code tools. We provide step-by-step templates that make success inevitable."
+      question: "How is this different from a ChatGPT or GenAI course?",
+      icon: <Zap className="w-4 h-4 text-yellow-400" />,
+      answer: "Generative AI is about 'content'; Agentic AI is about 'action.' In this bootcamp, you don't just learn to prompt—you learn to build autonomous systems that can reason, plan, use tools, and solve multi-step enterprise workflows without human micromanagement."
     },
     {
       id: 3,
-      question: "What if AI is moving too fast for me to catch up?",
-      answer: "That is exactly why you need this bootcamp. We filter out the noise and teach you only the 'Evergreen Principles' of Agentic AI that remain relevant even as tools change. You'll learn how to adapt, not just memorize."
+      question: "What is the real-world ROI for my career or business?",
+      icon: <ShieldCheck className="w-4 h-4 text-blue-400" />,
+      answer: "For professionals, demand for 'AI Orchestrators' has surged by 40% in 2026, with a 50% supply gap. For businesses, agentic automation typically reclaims 20-120 hours per employee annually. You’re learning to build the high-margin systems that companies are currently hiring for at $100k+ salaries."
     }
   ];
 
@@ -26,8 +29,8 @@ const FAQSection = () => {
   return (
     <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
       
-      {/* Background Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-indigo-500/10 blur-[100px] pointer-events-none rounded-full" />
+      {/* Background Ambient Glow - Updated to Emerald to match the 2026 tech palette */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-emerald-500/5 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-3xl mx-auto">
         
@@ -38,15 +41,15 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold tracking-widest uppercase mb-6">
             <Sparkles className="w-4 h-4" />
-            <span>Common Questions</span>
+            <span>Architecture & Outcomes</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            Still Have Doubts?
+            Common Questions
           </h2>
-          <p className="text-neutral-400 text-lg">
-            Everything you need to know about the Agentic AI Bootcamp.
+          <p className="text-neutral-400 text-lg font-medium">
+            Everything you need to know about joining the Agentic Era.
           </p>
         </motion.div>
 
@@ -64,8 +67,8 @@ const FAQSection = () => {
                 transition={{ delay: index * 0.1 }}
                 className={`group border rounded-2xl transition-all duration-300 overflow-hidden ${
                   isOpen 
-                    ? 'bg-neutral-900 border-indigo-500/50 shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)]' 
-                    : 'bg-neutral-900/50 border-neutral-800 hover:border-neutral-700'
+                    ? 'bg-neutral-900 border-emerald-500/30 shadow-[0_0_40px_-10px_rgba(16,185,129,0.1)]' 
+                    : 'bg-neutral-900/40 border-neutral-800 hover:border-neutral-700'
                 }`}
               >
                 {/* Question Header */}
@@ -73,11 +76,16 @@ const FAQSection = () => {
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   className="w-full flex items-center justify-between p-6 text-left transition-colors duration-300"
                 >
-                  <span className={`font-semibold text-lg md:text-xl transition-colors duration-300 ${
-                    isOpen ? 'text-indigo-400' : 'text-white group-hover:text-neutral-200'
-                  }`}>
-                    {item.question}
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <div className={`transition-colors duration-300 ${isOpen ? 'text-emerald-400' : 'text-neutral-500'}`}>
+                      {item.icon}
+                    </div>
+                    <span className={`font-bold text-lg md:text-xl transition-colors duration-300 ${
+                      isOpen ? 'text-emerald-400' : 'text-white group-hover:text-neutral-200'
+                    }`}>
+                      {item.question}
+                    </span>
+                  </div>
                   
                   {/* Rotating Icon */}
                   <motion.div
@@ -85,7 +93,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.2 }}
                     className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border transition-colors duration-300 ${
                       isOpen 
-                        ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400' 
+                        ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400' 
                         : 'bg-neutral-800 border-neutral-700 text-neutral-400 group-hover:bg-neutral-700'
                     }`}
                   >
@@ -102,7 +110,7 @@ const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 text-neutral-400 leading-relaxed text-base">
+                      <div className="px-6 pb-6 text-neutral-400 leading-relaxed text-base font-medium">
                         <div className="pt-2 border-t border-neutral-800/50">
                           {item.answer}
                         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Megaphone, Cpu, Rocket, ChevronRight } from 'lucide-react';
+import { ShieldAlert, Bot, Zap, ChevronRight } from 'lucide-react';
 
 const CareerWarningSection = () => {
   // Animation Variants
@@ -22,10 +22,10 @@ const CareerWarningSection = () => {
   return (
     <div className="relative min-h-screen bg-neutral-950 py-20 px-4 md:px-8 font-sans flex flex-col items-center justify-center overflow-hidden">
       
-      {/* Aceternity Background Effects */}
+      {/* Background Effects - Emerald/Cyan palette for 2026 Tech vibe */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-500/20 rounded-full blur-[100px] animate-pulse"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/20 rounded-full blur-[100px] animate-pulse"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 rounded-full blur-[100px] animate-pulse"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse"></div>
 
       <motion.div
         variants={containerVariants}
@@ -36,55 +36,55 @@ const CareerWarningSection = () => {
       >
         {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-neutral-800 bg-neutral-900 text-neutral-300 text-sm font-medium shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-red-500 mr-2 animate-pulse" />
-            Urgent Career Update
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-emerald-500/20 bg-neutral-900 text-emerald-400 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse" />
+            2026 Industry Shift
           </span>
         </motion.div>
 
         {/* Main Heading */}
-        <motion.div variants={itemVariants} className="max-w-3xl mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-            Your career is in <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">danger.</span>
+        <motion.div variants={itemVariants} className="max-w-4xl mb-16 text-center">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-tight">
+            The era of "Basic Prompting" is <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">over.</span>
           </h2>
-          <p className="text-lg md:text-xl text-neutral-400 font-light">
-            The AI revolution is here. The question isn't if you'll be affected, but whether you'll adapt or be left behind.
+          <p className="text-lg md:text-2xl text-neutral-400 font-medium max-w-3xl mx-auto">
+            In 2026, the market isn't hiring prompt-engineers. They are hiring <span className="text-white">Agentic Architects</span> who can build autonomous business logic.
           </p>
         </motion.div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
           
-          {/* Card 1: Breaking News */}
+          {/* Card 1: The Gap */}
           <AceternityCard 
-            icon={<Megaphone className="w-8 h-8 text-red-400" />}
-            title="The 2025 Prediction"
-            glowColor="from-red-500/20 to-orange-500/20"
+            icon={<ShieldAlert className="w-8 h-8 text-emerald-400" />}
+            title="The Execution Gap"
+            glowColor="from-emerald-500/20 to-teal-500/20"
           >
             <p className="text-neutral-400 leading-relaxed">
-              <span className="text-white font-semibold">85 million jobs</span> will be replaced by automation by 2025, but 97 million AI-driven jobs are emerging. Will you adapt or be left behind?
+              Companies are moving past basic chatbots. <span className="text-white font-semibold">40% of enterprise apps</span> now require task-specific agents. If you can't build them, you're becoming obsolete.
             </p>
           </AceternityCard>
 
-          {/* Card 2: AI Tech */}
+          {/* Card 2: Enterprise Demand */}
           <AceternityCard 
-            icon={<Cpu className="w-8 h-8 text-indigo-400" />}
-            title="AI is Universal Now"
-            glowColor="from-indigo-500/20 to-purple-500/20"
+            icon={<Bot className="w-8 h-8 text-cyan-400" />}
+            title="Agentic ROI"
+            glowColor="from-cyan-500/20 to-blue-500/20"
           >
             <p className="text-neutral-400 leading-relaxed">
-              Smart freelancers, coaches, consultants, and business owners are already <span className="text-white font-semibold">charging premium rates</span> for AI-powered services.
+              We've helped leaders <span className="text-white font-semibold">Enterprises</span> save $10M+ via Agentic workflows. This isn't a trend; it's the new gold standard for high-ticket consulting.
             </p>
           </AceternityCard>
 
-          {/* Card 3: Bootcamp */}
+          {/* Card 3: The Pivot */}
           <AceternityCard 
-            icon={<Rocket className="w-8 h-8 text-blue-400" />}
-            title="Your Escape Velocity"
-            glowColor="from-blue-500/20 to-cyan-500/20"
+            icon={<Zap className="w-8 h-8 text-yellow-400" />}
+            title="Architect Velocity"
+            glowColor="from-yellow-500/20 to-orange-500/20"
           >
             <p className="text-neutral-400 leading-relaxed">
-              Join our Free 2-Day AI Bootcamp to get hands-on experience with AI tools and career strategies to <span className="text-white font-semibold">3X your earning potential.</span>
+              Transition from an "AI User" to a <span className="text-white font-semibold">Six-Figure Architect.</span> Learn the production-ready frameworks used by top agencies to deploy autonomous swarms.
             </p>
           </AceternityCard>
 
@@ -92,11 +92,11 @@ const CareerWarningSection = () => {
 
         {/* CTA Button */}
         <motion.div variants={itemVariants}>
-          <button className="group relative inline-flex h-12 md:h-14 items-center justify-center overflow-hidden rounded-md bg-gradient-to-r from-red-600 to-red-500 px-8 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(239,68,68,0.7)] active:scale-95">
+          <button className="group relative inline-flex h-14 md:h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 font-black text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_-10px_rgba(16,185,129,0.7)] active:scale-95">
             <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
-            <span className="relative flex items-center gap-2 text-lg">
-              Master Agentic AI Automation
-              <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            <span className="relative flex items-center gap-3 text-lg md:text-xl">
+              Master Agentic AI Architecture
+              <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1.5" />
             </span>
           </button>
         </motion.div>
@@ -117,21 +117,18 @@ const AceternityCard = ({ icon, title, children, glowColor }) => {
       whileHover={{ y: -5 }}
       className="group relative h-full"
     >
-      {/* Animated Glow Border */}
       <div className={`absolute -inset-[1px] bg-gradient-to-r ${glowColor} rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
       
-      {/* Card Content */}
-      <div className="relative h-full bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col items-start shadow-xl transition-colors duration-300 group-hover:border-neutral-700">
+      <div className="relative h-full bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 flex flex-col items-start shadow-xl transition-all duration-300 group-hover:border-emerald-500/30">
         
-        {/* Icon Container */}
         <div className="p-3 bg-neutral-950 border border-neutral-800 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
         
-        <h3 className="text-white font-bold text-xl mb-3 tracking-wide">
+        <h3 className="text-white font-black text-xl mb-4 tracking-tight uppercase">
           {title}
         </h3>
-        <div className="text-sm md:text-base leading-relaxed">
+        <div className="text-sm md:text-base leading-relaxed font-medium">
           {children}
         </div>
       </div>

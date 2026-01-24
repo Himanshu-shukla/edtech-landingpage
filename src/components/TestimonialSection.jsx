@@ -1,61 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, MessageSquareQuote, Sparkles } from 'lucide-react';
+import { Star, MessageSquareQuote, Sparkles, Bot, Zap, ShieldCheck } from 'lucide-react';
 
 const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sophia Chen",
-      role: "Marketing Analyst",
-      initials: "SC",
-      text: "From SQL newbie to data querying pro in 48 hours—thanks to the Data Analyst Bootcamp! I never thought I'd be so excited about data analysis. The hands-on approach to tackling real business cases made the learning experience incredibly engaging. Huge shoutout to the instructors!"
+      name: "Arjun Mehta",
+      role: "Operations Director, Logistics Co.",
+      initials: "AM",
+      type: "Agency Client",
+      text: "The Agentic AI workflow integrated by the team was a game-changer. We automated 70% of our supply chain ticketing, saving us nearly $15k monthly in overhead. They didn't just give us a tool; they gave us a digital workforce."
     },
     {
       id: 2,
-      name: "James Wheeler",
-      role: "Financial Advisor",
-      initials: "JW",
-      text: "Just completed the intensive bootcamp, and I'm thoroughly impressed! The course expertly balanced theory with practical application, which is crucial in the finance sector. Learning to use AI agents for web scraping financial data was an unexpected highlight—it's opened up new possibilities for market research.\n\nKudos to the team for a well-structured and insightful program!"
+      name: "Sarah Jenkins",
+      role: "SDE-2 → AI Solutions Architect",
+      initials: "SJ",
+      type: "Course Alumni",
+      text: "I was stuck in a standard dev role. This bootcamp taught me how to build autonomous agents, not just prompts. Three weeks after finishing, I landed a Senior AI Architect role with a 65% salary hike. The 'Agentic' framework is the future."
     },
     {
       id: 3,
-      name: "Thomas O'Brien",
-      role: "Product Manager",
-      initials: "TO",
-      text: "Just wrapped up the mind-blowing AI Analytics Bootcamp! This 2-day intensive course was exactly what I needed to kickstart my journey. The session on using GPT for Google Sheets was a game-changer—I can already see how it'll streamline our reporting processes. Big shout out to Ankit and his team!"
+      name: "Vikram Malhotra",
+      role: "Founder, e-Commerce Brand",
+      initials: "VM",
+      type: "Agency Client",
+      text: "Our customer support was drowning in emails. The team deployed a custom AI Email Bot that handles refunds and tracking with 95% accuracy. It feels like we hired 5 people overnight, but for a fraction of the cost."
     },
     {
       id: 4,
-      name: "Rudy Rolland",
-      role: "Energy Technician",
-      initials: "RR",
-      text: "I recently attended to improve my data analysis skills for our solar energy projects. The sessions on analyzing weather patterns for energy production were directly applicable to my work. I found the programming parts challenging, but the hands-on exercises were very helpful!"
+      name: "Elena Rodriguez",
+      role: "Freelance Automation Expert",
+      initials: "ER",
+      type: "Course Alumni",
+      text: "I used to charge $50/hr for basic coding. Now I sell 'Workflow Transformation' packages starting at $5k using the Agentic AI stack I learned here. My clients are blown away by the ROI of autonomous agents."
     },
     {
       id: 5,
-      name: "Jake Thompson",
-      role: "Cafe Owner",
-      initials: "JT",
-      text: "Attended the course. Pretty intense 2 days! As a small cafe owner, I was looking for ways to understand my sales data better. The module on visualization helped me create a dashboard to track peak hours and inventory. Highly recommended for small business owners."
+      name: "David Chen",
+      role: "Head of Support, Fintech Startup",
+      initials: "DC",
+      type: "Agency Client",
+      text: "Implementing the Image Analyzer for KYC verification has cut our processing time from 4 hours to 40 seconds. The accuracy is terrifyingly good. If you aren't using their agentic solutions, you're falling behind."
     },
     {
       id: 6,
-      name: "Devanshu Thakkar",
-      role: "Data Analyst",
-      initials: "DT",
-      text: "I had an amazing experience with the team. The educators are well expertise and well known in the industry. Learn all the core concepts and some tricks to reach out to the problem solutions. Highly recommend this for anyone looking to upskill."
+      name: "Priya Sharma",
+      role: "Product Manager",
+      initials: "PS",
+      type: "Course Alumni",
+      text: "The most practical AI course I've ever taken. We moved past the 'ChatGPT hype' and actually built an autonomous research agent for our product roadmap. It’s now a core part of our weekly sprint planning."
     }
   ];
 
-  // Framer Motion Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -69,7 +72,8 @@ const TestimonialSection = () => {
       
       {/* Background Grid & Glows */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[100px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         
@@ -80,16 +84,19 @@ const TestimonialSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16 max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>Success Stories</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+            <ShieldCheck className="w-4 h-4" />
+            <span>Proven Results</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-            AI Skills = Bigger Paychecks. <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-              Hear From Previous Attendees
+            Real Efficiency. <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              Real Agentic Impact.
             </span>
           </h2>
+          <p className="mt-6 text-neutral-400 text-lg max-w-2xl mx-auto">
+            Whether it's training individuals for $100k+ roles or deploying agents that save companies millions—we deliver.
+          </p>
         </motion.div>
 
         {/* Masonry Layout Grid */}
@@ -105,26 +112,26 @@ const TestimonialSection = () => {
               key={review.id} 
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="break-inside-avoid relative bg-neutral-900/50 backdrop-blur-sm rounded-2xl p-8 border border-neutral-800 shadow-xl flex flex-col gap-5 group transition-all duration-300 hover:border-indigo-500/30 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)]"
+              className="break-inside-avoid relative bg-neutral-900/40 backdrop-blur-md rounded-2xl p-8 border border-neutral-800 shadow-xl flex flex-col gap-5 group transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.1)]"
             >
-              {/* Background Quote Icon (Watermark) */}
-              <MessageSquareQuote className="absolute top-6 right-6 w-12 h-12 text-neutral-800/50 transition-colors duration-300 group-hover:text-indigo-500/10" />
+              {/* Type Badge */}
+              <div className="absolute top-6 right-6 px-2 py-0.5 rounded bg-neutral-800 text-[10px] font-bold uppercase tracking-widest text-neutral-500 border border-neutral-700">
+                {review.type}
+              </div>
 
               {/* User Header */}
               <div className="flex items-center gap-4 relative z-10">
-                {/* Avatar with Gradient */}
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-[1px] shadow-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-[1px] shadow-lg">
                   <div className="w-full h-full bg-neutral-900 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {review.initials}
                   </div>
                 </div>
                 
-                {/* Name & Role */}
                 <div>
                   <h3 className="font-bold text-white text-lg leading-tight">
                     {review.name}
                   </h3>
-                  <p className="text-sm font-medium text-indigo-400/80">
+                  <p className="text-sm font-medium text-emerald-400/80">
                     {review.role}
                   </p>
                 </div>
@@ -133,16 +140,20 @@ const TestimonialSection = () => {
               {/* Star Rating */}
               <div className="flex gap-1 relative z-10">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-4 h-4 fill-emerald-400 text-emerald-400" />
                 ))}
               </div>
 
-              {/* Divider Line */}
               <hr className="border-neutral-800/60" />
 
               {/* Review Text */}
-              <div className="text-neutral-300 leading-relaxed text-sm md:text-base whitespace-pre-line relative z-10 font-medium tracking-wide">
-                {review.text}
+              <div className="text-neutral-300 leading-relaxed text-sm md:text-base relative z-10 font-normal tracking-wide italic">
+                "{review.text}"
+              </div>
+
+              {/* Bottom Icon */}
+              <div className="flex justify-end opacity-20 group-hover:opacity-100 transition-opacity">
+                {review.type === "Agency Client" ? <Bot className="w-5 h-5 text-emerald-400" /> : <Zap className="w-5 h-5 text-yellow-400" />}
               </div>
 
             </motion.div>

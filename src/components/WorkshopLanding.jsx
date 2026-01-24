@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Globe, Languages, Sparkles, CheckCircle2, ArrowRight, Play } from 'lucide-react';
+import { Calendar, Clock, Globe, Languages, Sparkles, CheckCircle2, ArrowRight, Play, Zap, Bot, Cpu } from 'lucide-react';
 
 const WorkshopLanding = () => {
   // Framer Motion Animation Variants
@@ -39,15 +39,15 @@ const WorkshopLanding = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Future-Proof Your Career Today
+            Learn AI. Deploy Agents. Scale Business.
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-            Launch a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Six-Figure AI Hustle</span> <br className="hidden md:block" />
-            in 4 Months — No Code Required.
+            Master & Deploy <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Agentic AI Workflows</span> <br className="hidden md:block" />
+            For Modern Enterprises.
           </h1>
           <p className="text-neutral-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-            Get hands-on training, real client-ready skills, and unlock income with zero fluff and zero code confusion.
+            Bridge the gap between AI theory and real-world execution. We don't just teach AI—we build the agents that power 10x more efficient workflows.
           </p>
         </motion.div>
 
@@ -65,9 +65,10 @@ const WorkshopLanding = () => {
               className="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 shadow-2xl aspect-video cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent z-10"></div>
+              {/* Updated placeholder image to something more "Agentic/Tech" focused */}
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" 
-                alt="AI Dashboard" 
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop" 
+                alt="Agentic AI Workflow" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80"
               />
               
@@ -79,9 +80,9 @@ const WorkshopLanding = () => {
               </div>
 
               {/* Live Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-red-600 px-3 py-1 rounded-md text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+              <div className="absolute top-4 left-4 z-20 bg-emerald-600 px-3 py-1 rounded-md text-xs font-bold tracking-widest uppercase flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-                Live Workshop
+                Agentic AI Workshop
               </div>
             </motion.div>
 
@@ -92,10 +93,10 @@ const WorkshopLanding = () => {
               transition={{ delay: 0.4 }}
               className="grid grid-cols-2 gap-4"
             >
-              <InfoCard icon={<Calendar className="w-5 h-5 text-emerald-400" />} label="Dates" value="12th - 13th July" />
-              <InfoCard icon={<Clock className="w-5 h-5 text-blue-400" />} label="Time" value="11 AM EDT / 4 PM BST" />
-              <InfoCard icon={<Globe className="w-5 h-5 text-indigo-400" />} label="Platform" value="Live on Zoom" />
-              <InfoCard icon={<Languages className="w-5 h-5 text-purple-400" />} label="Language" value="English" />
+              <InfoCard icon={<Zap className="w-5 h-5 text-yellow-400" />} label="Focus" value="Workflow Automation" />
+              <InfoCard icon={<Bot className="w-5 h-5 text-blue-400" />} label="Specialization" value="AI Agentic Systems" />
+              <InfoCard icon={<Globe className="w-5 h-5 text-indigo-400" />} label="Access" value="Hybrid Learning" />
+              <InfoCard icon={<Cpu className="w-5 h-5 text-purple-400" />} label="Outcome" value="Client-Ready Deployments" />
             </motion.div>
           </div>
 
@@ -109,35 +110,35 @@ const WorkshopLanding = () => {
             >
               <div className="space-y-6 mb-8">
                 <BenefitItem variants={itemVariants}>
-                  Accelerate Your AI Career Path <span className="text-white font-semibold">6X Faster</span> Using Agentic Tools.
+                  <span className="text-white font-semibold">Comprehensive AI Training:</span> Go from Zero to building custom LLM wrappers and autonomous agents.
                 </BenefitItem>
 
                 <BenefitItem variants={itemVariants}>
-                  Develop Practical <span className="text-white font-semibold">Agentic AI Skills</span> That Are In Extreme Demand.
+                  <span className="text-white font-semibold">Agentic Workflow Implementation:</span> We build the tools that handle ticketing, emails, and support for your business.
                 </BenefitItem>
 
                 <BenefitItem variants={itemVariants}>
-                  Get Personalized Guidance To <span className="text-white font-semibold">Become Job-Ready for SIX-FIGURE Roles.</span>
+                  <span className="text-white font-semibold">Enterprise-Grade SOPs:</span> Learn the exact "Nugget" style frameworks used to save companies millions.
                 </BenefitItem>
 
                 <BenefitItem variants={itemVariants} border={false}>
-                  Build An <span className="text-white font-semibold">Interview-Winning Portfolio</span> Of Autonomous Agents.
+                  <span className="text-white font-semibold">Consulting & Deployment:</span> Get direct access to our agency arm to integrate AI into your existing stack.
                 </BenefitItem>
               </div>
 
               {/* Primary CTA Button */}
               <motion.div variants={itemVariants} className="mt-auto">
-                <button className="group relative inline-flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-red-600 to-red-500 px-8 shadow-[0_0_30px_-5px_rgba(239,68,68,0.5)] transition-all duration-300 hover:scale-[1.02]">
+                <button className="group relative inline-flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-8 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-[1.02]">
                   <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
                   <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
                     <Sparkles className="w-5 h-5 text-yellow-300" />
-                    Master Agentic AI Automation
+                    Start Your AI Evolution
                     <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
                   </span>
                 </button>
                 <p className="text-center text-xs text-neutral-500 mt-4 flex items-center justify-center gap-2">
                   <CheckCircle2 className="w-3 h-3 text-emerald-500" />
-                  No credit card required for registration.
+                  Courses & Enterprise Agency Solutions.
                 </p>
               </motion.div>
 
@@ -171,9 +172,9 @@ const BenefitItem = ({ children, variants, border = true }) => (
         <CheckCircle2 className="w-5 h-5 text-emerald-400" strokeWidth={2.5} />
       </div>
     </div>
-    <p className={`text-neutral-400 text-base md:text-lg leading-relaxed ${border ? 'border-b border-neutral-800 pb-6' : ''} w-full transition-colors duration-300 hover:text-neutral-300`}>
+    <div className={`text-neutral-400 text-base md:text-lg leading-relaxed ${border ? 'border-b border-neutral-800 pb-6' : ''} w-full transition-colors duration-300 hover:text-neutral-300`}>
       {children}
-    </p>
+    </div>
   </motion.div>
 );
 

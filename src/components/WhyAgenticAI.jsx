@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Settings, TrendingUp, Bot, AlertTriangle, ArrowRight } from 'lucide-react';
+import { Zap, BarChart3, Bot, Rocket, ArrowRight } from 'lucide-react';
 
 const WhyAgenticAI = () => {
   return (
@@ -8,7 +8,7 @@ const WhyAgenticAI = () => {
       
       {/* Ambient Space Grid & Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-indigo-500/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/10 blur-[120px] pointer-events-none rounded-full" />
 
       {/* Main Glassmorphism Container */}
       <motion.div 
@@ -27,13 +27,13 @@ const WhyAgenticAI = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-bold tracking-wide uppercase mb-6">
-              <AlertTriangle className="w-4 h-4" />
-              <span>Critical Career Alert</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold tracking-wide uppercase mb-6">
+              <Rocket className="w-4 h-4" />
+              <span>The Era of Autonomy</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-center tracking-tight leading-tight max-w-3xl">
-              Why you must get Agentic AI skills <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">RIGHT NOW.</span>
+              Why the future belongs to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Agentic Orchestrators.</span>
             </h2>
           </motion.div>
 
@@ -43,10 +43,10 @@ const WhyAgenticAI = () => {
             <SpotlightCard 
               delay={0.1}
               number="01"
-              icon={<Settings className="w-8 h-8 text-indigo-400" />}
+              icon={<Zap className="w-8 h-8 text-yellow-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">40% of all jobs</span> could be automated by 2035 according to the World Economic Forum.
+                  <span className="text-white font-bold">From Chat to Action:</span> Static AI answers; Agentic AI <span className="text-white font-bold">executes.</span> Master the shift from prompting to building autonomous workflows.
                 </>
               }
             />
@@ -54,10 +54,10 @@ const WhyAgenticAI = () => {
             <SpotlightCard 
               delay={0.2}
               number="02"
-              icon={<TrendingUp className="w-8 h-8 text-blue-400" />}
+              icon={<BarChart3 className="w-8 h-8 text-blue-400" />}
               text={
                 <>
-                  AI-skilled professionals & freelancers are getting <span className="text-white font-bold">2-3x salary hikes</span> & high-paying clients.
+                  <span className="text-white font-bold">Massive ROI:</span> Enterprises are replacing fragmented tools with unified <span className="text-white font-bold">AI Agents</span> to slash operational costs by up to 60%.
                 </>
               }
             />
@@ -68,7 +68,7 @@ const WhyAgenticAI = () => {
               icon={<Bot className="w-8 h-8 text-emerald-400" />}
               text={
                 <>
-                  AI-automation services are in HUGE demand—businesses are paying <span className="text-white font-bold">premiums for solutions.</span>
+                  <span className="text-white font-bold">Service Arbitrage:</span> High-ticket clients no longer want "AI advice"—they pay <span className="text-white font-bold">premium rates for deployment</span> and managed agents.
                 </>
               }
             />
@@ -82,10 +82,10 @@ const WhyAgenticAI = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <button className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-red-600 to-red-500 px-10 shadow-[0_0_40px_-10px_rgba(239,68,68,0.7)] transition-all duration-300 hover:scale-105">
+            <button className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 shadow-[0_0_40px_-10px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-105">
               <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
               <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
-                Master Agentic AI Automation Now
+                Master Agentic AI Strategy
                 <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
               </span>
             </button>
@@ -136,14 +136,14 @@ const SpotlightCard = ({ icon, text, number, delay }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex flex-col items-start min-h-[240px] p-8 overflow-hidden bg-neutral-900 border border-neutral-800 rounded-2xl transition-all duration-300 hover:border-neutral-700 hover:shadow-2xl"
+      className="relative flex flex-col items-start min-h-[260px] p-8 overflow-hidden bg-neutral-900 border border-neutral-800 rounded-2xl transition-all duration-300 hover:border-neutral-700 hover:shadow-2xl"
     >
       {/* Spotlight Effect */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(99,102,241,0.1), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(16,185,129,0.1), transparent 40%)`,
         }}
       />
 
