@@ -29,7 +29,7 @@ const BonusSection = () => {
       id: 3,
       label: "BONUS 3",
       value: "$599",
-      title: "The 'Nugget' Agency SOPs",
+      title: "The 'AI' Agency SOPs",
       text: "Our internal Standard Operating Procedures for deploying autonomous agents in enterprise support environments.",
       icon: <Briefcase className="w-16 h-16 md:w-20 md:h-20 text-purple-400" strokeWidth={1.5} />,
       color: "from-purple-500",
