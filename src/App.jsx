@@ -22,29 +22,34 @@ import ProgramsSection from './components/ProgramsSection.jsx'
 import CareerStats from './components/CareerStats.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Navbar/>
-    <FoundryHero/>
-    <ProgramsSection/>
-    <CareerStats/>
-      <WorkshopLanding />
-      <CareerWarningSection />
-      <VideoShowcase />
-      <AlumniSection />
-      <WhyAgenticAI />
-      <CurriculumSection />
-      <TargetAudienceSection />
-      <BonusSection />
-      <ComparisonSection />
-      <IndustryGrowthSection />
-      <TestimonialSection />
-      {/* <InstructorSection /> */}
-      <IrreplaceableSkillsSection />
-      <FAQSection />
-    </>
+    <div className="bg-neutral-950 min-h-screen text-white selection:bg-emerald-500/30">
+      <Navbar />
+      <FoundryHero />
+      {/* Removed CareerStats to reduce clutter, or keep with tight padding */}
+      <CareerStats /> 
+      
+      <div className="flex flex-col gap-0"> {/* gap-0 ensures no extra space between components */}
+        <ProgramsSection />
+        <WorkshopLanding />
+        <CareerWarningSection />
+        <VideoShowcase />
+        <AlumniSection />
+        <WhyAgenticAI />
+        <CurriculumSection />
+        <TargetAudienceSection />
+        <BonusSection />
+        <ComparisonSection />
+        <IndustryGrowthSection />
+        <TestimonialSection />
+        <IrreplaceableSkillsSection />
+        <FAQSection />
+      </div>
+
+      <footer className="py-8 text-center text-neutral-600 text-sm border-t border-neutral-900 mt-10">
+        <p>© 2026 EdTech Informative. All rights reserved.</p>
+      </footer>
+    </div>
   )
 }
 

@@ -74,9 +74,7 @@ const CurriculumSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
-      
-      {/* Background Effects */}
+<section className="relative py-12 md:py-20 px-4 bg-neutral-950 font-sans overflow-hidden">      {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/5 blur-[120px] pointer-events-none rounded-full" />

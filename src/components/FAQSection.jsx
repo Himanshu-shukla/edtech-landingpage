@@ -29,7 +29,7 @@ const FAQSection = () => {
   return (
     // 1. INLINE STYLE: Forces black background immediately, overriding any CSS file
     <section 
-      className="relative py-24 px-4 font-sans overflow-hidden"
+      className="relative py-12 md:py-24 px-4 !bg-neutral-950 font-sans overflow-hidden"
       style={{ backgroundColor: '#0a0a0a', color: '#ffffff' }}
     >
       

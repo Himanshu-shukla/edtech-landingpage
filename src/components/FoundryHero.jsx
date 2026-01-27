@@ -4,8 +4,7 @@ import { Sparkles, Bot, ArrowRight, TrendingUp, ShieldCheck, Terminal } from 'lu
 
 const FoundryHero = () => {
   return (
-    <section className="relative min-h-[90vh] bg-neutral-950 text-white font-sans overflow-hidden flex items-center pt-32 pb-16 px-4 md:px-8">
-      {/* Ambient Grid & Emerald Glow */}
+<section className="relative pt-28 pb-12 md:pt-32 md:pb-20 bg-neutral-950 text-white font-sans overflow-hidden flex items-center px-4 md:px-8">      {/* Ambient Grid & Emerald Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#05966910_1px,transparent_1px),linear-gradient(to_bottom,#05966910_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 blur-[130px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 blur-[130px] pointer-events-none rounded-full" />

@@ -17,8 +17,7 @@ const WorkshopLanding = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-neutral-950 text-white font-sans overflow-hidden flex items-center pt-24 pb-16 px-4 md:px-8">
-      
+<section className="relative py-12 md:py-20 bg-neutral-950 text-white font-sans overflow-hidden flex items-center px-4 md:px-8">      
       {/* Ambient Space Grid & Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/10 blur-[130px] pointer-events-none rounded-full" />

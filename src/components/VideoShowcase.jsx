@@ -6,7 +6,7 @@ import whatsappVideo from '../assets/Video_Generation_for_WhatsApp_Chat.mp4';
 
 const VideoShowcase = () => {
   return (
-    <section className="relative py-24 px-4 bg-neutral-950 overflow-hidden font-sans">
+    <section className="relative py-8 md:py-12 !bg-neutral-950 font-sans overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0596690a_1px,transparent_1px),linear-gradient(to_bottom,#0596690a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">

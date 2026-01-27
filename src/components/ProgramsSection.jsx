@@ -37,8 +37,7 @@ const ProgramsSection = () => {
   ];
 
   return (
-    <section id="programs" className="py-24 bg-neutral-950 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+<section id="programs" className="py-12 md:py-20 bg-neutral-950 relative border-t border-neutral-900/50">      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
             Industry-Standard <br />
