@@ -72,28 +72,37 @@ const TestimonialSection = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16 max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-            <ShieldCheck className="w-4 h-4" />
+          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-base md:text-lg font-bold mb-8">
+            <ShieldCheck className="w-5 h-5" />
             <span>Student Success</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-            Real Results. <br className="hidden md:block" />
+
+          {/* <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+            Real Results. 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
               Real Revenue.
             </span>
+          </h2> */}
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+            RESPONSES OF PARTICIPANTS FROM 
+            OUR{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              2-Day Live BOOTCAMP
+            </span>
           </h2>
-          <p className="mt-6 text-neutral-400 text-lg max-w-2xl mx-auto">
-            See how professionals are using Agentic AI to save time and build profitable one-person agencies.
-          </p>
+
+
+
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -101,8 +110,8 @@ const TestimonialSection = () => {
           className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
         >
           {testimonials.map((review) => (
-            <motion.div 
-              key={review.id} 
+            <motion.div
+              key={review.id}
               variants={itemVariants}
               whileHover={{ y: -5 }}
               className="break-inside-avoid relative bg-neutral-900/40 backdrop-blur-md rounded-2xl p-8 border border-neutral-800 shadow-xl flex flex-col gap-5 group transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.1)]"

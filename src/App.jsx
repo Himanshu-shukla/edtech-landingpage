@@ -21,28 +21,31 @@ import VideoShowcase from './components/VideoShowcase.jsx'
 import ProgramsSection from './components/ProgramsSection.jsx'
 import CareerStats from './components/CareerStats.jsx'
 import WhatsAppWidget from './components/WhatsAppWidget.jsx'
+import BootcampAgenda from './components/BootcampAgenda.jsx'
 
 function App() {
   return (
     <div className="bg-neutral-950 min-h-screen text-white selection:bg-emerald-500/30">
-      <Navbar />
+      {/* <Navbar /> */}
       <FoundryHero />
+      < BootcampAgenda />
+      <AlumniSection />
+      <TestimonialSection />
+
       {/* Removed CareerStats to reduce clutter, or keep with tight padding */}
-      <CareerStats /> 
-      
+      <CareerStats />
+
       <div className="flex flex-col gap-0"> {/* gap-0 ensures no extra space between components */}
         <ProgramsSection />
         <WorkshopLanding />
         <CareerWarningSection />
         <VideoShowcase />
-        <AlumniSection />
         <WhyAgenticAI />
         <CurriculumSection />
         <TargetAudienceSection />
         <BonusSection />
         <ComparisonSection />
         <IndustryGrowthSection />
-        <TestimonialSection />
         <IrreplaceableSkillsSection />
         <FAQSection />
       </div>

@@ -1,89 +1,108 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, MessageSquare, Mic, Share2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, MessageSquare, Mic, Share2, ArrowRight, Calendar, Code, LayoutTemplate } from 'lucide-react';
 
 const ProgramsSection = () => {
-  // Updated to reflect the "Live Builds" from the sample content
-  const agents = [
+  // Exact 2-Day Agenda from your content
+  const curriculum = [
     {
-      id: 1,
-      title: "LinkedIn Content Agent",
-      subtitle: "Day 1 • Live Build",
-      icon: <Share2 className="w-8 h-8 text-blue-400" />,
-      description: "Automate your personal brand. Build an agent that researches trending topics, writes viral hooks, structures posts, and auto-publishes to LinkedIn.",
-      skills: ["Research Automation", "Copywriting AI", "LinkedIn API", "Scheduling Logic"],
-      outcome: "Consistent online presence on autopilot."
+      day: "Day 1",
+      title: "Core Foundations & First Builds",
+      time: "5+ Hours Live • Templates Included",
+      modules: [
+        {
+          title: "Agentic AI Fundamentals",
+          desc: "Understand workflows, memory, tools, and decision-making logic.",
+          icon: <LayoutTemplate className="w-5 h-5 text-blue-400" />
+        },
+        {
+          title: "LinkedIn Content Agent (Live Build)",
+          desc: "Research → Write → Post. Automate your personal brand entirely.",
+          icon: <Share2 className="w-5 h-5 text-blue-400" />
+        },
+        {
+          title: "WhatsApp Sales Bot (Live Build)",
+          desc: "A RAG-based agent that answers FAQs and closes leads 24/7.",
+          icon: <MessageSquare className="w-5 h-5 text-green-400" />
+        },
+        {
+          title: "Smart Email Manager",
+          desc: "Draft replies and organize emails automatically.",
+          icon: <CheckCircle2 className="w-5 h-5 text-purple-400" />
+        }
+      ]
     },
     {
-      id: 2,
-      title: "WhatsApp Sales Bot",
-      subtitle: "Day 1 • RAG Based",
-      icon: <MessageSquare className="w-8 h-8 text-green-400" />,
-      description: "Build a 24/7 sales employee. This agent answers customer queries using your business data (RAG), qualifies leads, and closes deals on WhatsApp.",
-      skills: ["RAG Implementation", "WhatsApp Business API", "Lead Qualification", "Context Memory"],
-      outcome: "Instant customer replies & higher sales."
-    },
-    {
-      id: 3,
-      title: "AI Voice Caller",
-      subtitle: "Day 2 • Advanced",
-      icon: <Mic className="w-8 h-8 text-purple-400" />,
-      description: "The future of support. Create a voice agent that can hold natural human-like conversations, take messages, and summarize calls instantly.",
-      skills: ["Voice Synthesis (Vapi)", "Speech-to-Text", "Conversation Design", "CRM Integration"],
-      outcome: "Replace manual cold calling & support teams."
+      day: "Day 2",
+      title: "Advanced Scale & Monetization",
+      time: "5+ Hours Live • Agency Roadmap",
+      modules: [
+        {
+          title: "AI Voice Caller (Live Build)",
+          desc: "Build a Vapi agent that talks like a human to handle support calls.",
+          icon: <Mic className="w-5 h-5 text-red-400" />
+        },
+        {
+          title: "Multi-Agent Marketing System",
+          desc: "Orchestrate a team of agents (Researcher + Writer + Editor).",
+          icon: <Share2 className="w-5 h-5 text-orange-400" />
+        },
+        {
+          title: "Build Your First AI App",
+          desc: "Concept to Launch. Package your automation as a product.",
+          icon: <Code className="w-5 h-5 text-yellow-400" />
+        },
+        {
+          title: "Agency Launchpad Blueprint",
+          desc: "Pricing, Proposals & SOPs to sign your first £2,000 client.",
+          icon: <Calendar className="w-5 h-5 text-emerald-400" />
+        }
+      ]
     }
   ];
 
   return (
     <section id="curriculum" className="py-12 md:py-20 bg-neutral-950 relative border-t border-neutral-900/50">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            Don't Just Learn. <br />
-            <span className="text-emerald-500">Build 3 Real Agents Live.</span>
+            Two Days. <br />
+            <span className="text-emerald-500">Five Real Agents.</span>
           </h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">
             Forget theory. In this bootcamp, you will look over my shoulder and build these 
-            three exact systems from scratch. You leave with working software, not just notes.
+            exact systems from scratch. You leave with working software, not just notes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {agents.map((program) => (
+        <div className="grid md:grid-cols-2 gap-8">
+          {curriculum.map((day, index) => (
             <motion.div 
-              key={program.id}
-              whileHover={{ y: -10 }}
-              className="bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 hover:border-emerald-500/50 transition-all duration-300 flex flex-col group"
+              key={index}
+              whileHover={{ y: -5 }}
+              className="bg-neutral-900/50 border border-neutral-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300"
             >
-              <div className="bg-neutral-950 w-16 h-16 rounded-xl flex items-center justify-center border border-neutral-800 mb-6 group-hover:scale-110 transition-transform">
-                {program.icon}
+              <div className="flex items-center justify-between mb-6">
+                <span className="bg-emerald-900/30 text-emerald-400 px-4 py-1 rounded-full text-xs font-black tracking-widest uppercase border border-emerald-500/20">
+                  {day.day}
+                </span>
+                <span className="text-neutral-500 text-xs font-bold uppercase tracking-wider">{day.time}</span>
               </div>
+              
+              <h3 className="text-2xl font-black text-white mb-8">{day.title}</h3>
 
-              <div className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-500">
-                {program.subtitle}
-              </div>
-              <h3 className="text-2xl font-black text-white mb-4">{program.title}</h3>
-              <p className="text-neutral-400 text-sm leading-relaxed mb-8 border-b border-neutral-800 pb-8">
-                {program.description}
-              </p>
-
-              <div className="space-y-3 mb-8 flex-grow">
-                {program.skills.map((skill, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                    <span className="text-sm text-neutral-300 font-medium">{skill}</span>
+              <div className="space-y-6">
+                {day.modules.map((mod, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="mt-1 p-2 bg-neutral-800 rounded-lg border border-neutral-700 h-fit">
+                      {mod.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold text-lg leading-tight mb-1">{mod.title}</h4>
+                      <p className="text-neutral-400 text-sm leading-relaxed">{mod.desc}</p>
+                    </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="mt-auto">
-                <div className="text-xs text-neutral-500 mb-4 font-mono">
-                  Outcome: <span className="text-white font-bold">{program.outcome}</span>
-                </div>
-                <button className="w-full py-4 rounded-xl bg-neutral-100 text-neutral-950 font-black uppercase tracking-widest hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2">
-                  See Full Syllabus
-                  <ArrowRight className="w-4 h-4" />
-                </button>
               </div>
             </motion.div>
           ))}
