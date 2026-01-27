@@ -20,6 +20,7 @@ import Navbar from './components/navbar.jsx'
 import VideoShowcase from './components/VideoShowcase.jsx'
 import ProgramsSection from './components/ProgramsSection.jsx'
 import CareerStats from './components/CareerStats.jsx'
+import WhatsAppWidget from './components/WhatsAppWidget.jsx'
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <IrreplaceableSkillsSection />
         <FAQSection />
       </div>
+      <WhatsAppWidget />
 
       <footer className="py-8 text-center text-neutral-600 text-sm border-t border-neutral-900 mt-10">
         <p>© 2026 EdTech Informative. All rights reserved.</p>
