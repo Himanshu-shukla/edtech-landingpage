@@ -78,7 +78,7 @@ const TestimonialSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16 max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-base md:text-lg font-bold mb-8">
+          <div className="inline-flex items-center gap-3 px-2 py-2.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-base md:text-lg font-bold mb-8">
             <ShieldCheck className="w-5 h-5" />
             <span>Student Success</span>
           </div>
@@ -90,7 +90,7 @@ const TestimonialSection = () => {
             </span>
           </h2> */}
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
             RESPONSES OF PARTICIPANTS FROM 
             OUR{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">

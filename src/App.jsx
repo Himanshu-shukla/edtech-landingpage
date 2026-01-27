@@ -22,6 +22,7 @@ import ProgramsSection from './components/ProgramsSection.jsx'
 import CareerStats from './components/CareerStats.jsx'
 import WhatsAppWidget from './components/WhatsAppWidget.jsx'
 import BootcampAgenda from './components/BootcampAgenda.jsx'
+import ExclusiveBonusesSection from './components/ExclusiveBonusesSection.jsx'
 
 function App() {
   return (
@@ -31,21 +32,25 @@ function App() {
       < BootcampAgenda />
       <AlumniSection />
       <TestimonialSection />
+      <ExclusiveBonusesSection />
+
 
       {/* Removed CareerStats to reduce clutter, or keep with tight padding */}
-      <CareerStats />
+      {/* <CareerStats /> */}
 
       <div className="flex flex-col gap-0"> {/* gap-0 ensures no extra space between components */}
         <ProgramsSection />
+        <IndustryGrowthSection />
+        <ComparisonSection />
+        <TargetAudienceSection />
+
+
         <WorkshopLanding />
         <CareerWarningSection />
         <VideoShowcase />
         <WhyAgenticAI />
         <CurriculumSection />
-        <TargetAudienceSection />
         <BonusSection />
-        <ComparisonSection />
-        <IndustryGrowthSection />
         <IrreplaceableSkillsSection />
         <FAQSection />
       </div>

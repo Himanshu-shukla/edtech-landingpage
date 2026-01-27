@@ -1,63 +1,67 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Bot, Terminal, Calendar } from 'lucide-react';
+import { CheckCircle2, Bot, Terminal, Calendar, Code, Network } from 'lucide-react';
 
 const CurriculumSection = () => {
-  // Data aligned with "2-Day Agentic AI Certification Bootcamp"
+  // Exact 2-Day Agenda from your content + Added Tool Highlights
   const curriculumData = [
     {
       dayLabel: "DAY 01",
       icon: <Terminal className="w-4 h-4" />,
-      title: "Core Foundations & First Builds",
-      imageSrc: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop",
+      title: "Generative AI Fundamentals & Content Creation",
+      time: "10 AM - 6 PM IST",
+      // Changed image to something relevant to AI generation/coding
+      imageSrc: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
       items: [
         {
           id: 1,
-          highlight: "Agentic AI Fundamentals:",
-          text: " Understand workflows, memory, tools, and decision-making logic. No coding required."
+          highlight: "Generative AI Foundations:",
+          text: " Master the Gen AI Tools Stack & explore Large Language Models (LLMs). Onboard into the AI Mastermind."
         },
         {
           id: 2,
-          highlight: "LinkedIn Content Agent:",
-          text: " LIVE BUILD: An agent that researches trends, writes posts, and auto-publishes to your profile."
+          highlight: "Web Apps Without Code:",
+          text: " Build functional web-based applications without writing a single line of code."
         },
         {
           id: 3,
-          highlight: "Smart Email Manager:",
-          text: " LIVE BUILD: An agent that drafts replies, organizes inbox, and flags high-priority emails automatically."
+          highlight: "AI for Image & Video:",
+          text: " Hands-on project: Prompting for realistic images & converting them to professional videos."
         },
         {
           id: 4,
-          highlight: "WhatsApp Sales Bot:",
-          text: " LIVE BUILD: A RAG-based agent that answers customer FAQs and closes leads 24/7."
+          highlight: "Marketing Content Engine:",
+          text: " Generate short-form and long-form creative assets instantly for marketing campaigns."
         }
       ]
     },
     {
       dayLabel: "DAY 02",
-      icon: <Calendar className="w-4 h-4" />,
-      title: "Advanced Systems & Monetization",
-      imageSrc: "https://miro.medium.com/v2/resize:fit:2000/1*J-WePR99V191s1cNInJ7NA.png",
+      icon: <Network className="w-4 h-4" />,
+      title: "Custom GPTs & Advanced Automation",
+      time: "10 AM - 6 PM IST",
+      // Changed image to represent automation/workflows
+      imageSrc: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
       items: [
         {
           id: 1,
-          highlight: "AI Voice Caller:",
-          text: " LIVE BUILD: Create a voice agent (using Vapi) that talks like a human to handle support calls."
+          highlight: "Build Custom GPTs:",
+          text: " Create your own Writing Bot that mimics your style perfectly. Master Agentic Tools & Workflows."
         },
         {
           id: 2,
-          highlight: "Multi-Agent Systems:",
-          text: " Orchestrate a team of agents (Researcher + Writer + Editor) for complex marketing workflows."
+          highlight: "Future of AI:",
+          text: " Deep dive into what's coming next in the AI revolution and how to stay ahead."
         },
         {
           id: 3,
-          highlight: "Build Your First AI App:",
-          text: " Concept to Launch. Learn to package your automation into a sellable product."
+          highlight: "Make.com & Zapier Mastery:",
+          text: " Introduction to No-Code automation. Connect multiple apps and trigger complex actions automatically."
         },
         {
           id: 4,
-          highlight: "Agency Roadmap:",
-          text: " The Blueprint: How to package, price (₹50K+), and sell these services to international clients."
+          highlight: "n8n & API Integration:",
+          text: " Integrate ChatGPT API with n8n workflows for enterprise-grade autonomous systems."
         }
       ]
     }
@@ -95,13 +99,13 @@ const CurriculumSection = () => {
             <span>2-Day Live Bootcamp Agenda</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-            What You'll Build in <br /> 
+            Master Generative AI & <br /> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-              One Weekend.
+              No-Code Automation.
             </span>
           </h2>
           <p className="text-neutral-400 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-            10+ Hours of Live Training. 5+ Real Projects. Deployment Ready.
+            16+ Hours of Intensive Training. From Custom GPTs to Make.com & n8n Workflows.
           </p>
         </motion.div>
 
@@ -139,11 +143,14 @@ const CurriculumCard = ({ content, index }) => {
           <span className={`${accentColor}`}>{content.icon}</span>
           <span className="text-white font-black text-xs tracking-widest uppercase">{content.dayLabel}</span>
         </div>
+        <div className="absolute top-6 right-6 bg-emerald-900/80 border border-emerald-500/30 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg z-20">
+          {content.time}
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent z-10"></div>
       </div>
 
       <div className="p-8 md:p-12 flex-grow flex flex-col relative z-20 -mt-10">
-        <h3 className="text-2xl md:text-4xl font-black text-white mb-10 leading-tight">{content.title}</h3>
+        <h3 className="text-2xl md:text-3xl font-black text-white mb-10 leading-tight">{content.title}</h3>
         <ul className="space-y-8 relative">
           <div className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-neutral-800 via-neutral-700 to-transparent" />
           {content.items.map((item) => (

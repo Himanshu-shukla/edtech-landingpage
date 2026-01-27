@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { XCircle, CheckCircle2, Sparkles, AlertTriangle, Scale } from 'lucide-react';
+import { XCircle, CheckCircle2, Sparkles, AlertTriangle, Scale, ArrowRight } from 'lucide-react';
 
 const ComparisonSection = () => {
+  // Define WhatsApp Link
+  const whatsappLink = "https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20enroll%20in%20the%20bootcamp%20after%20seeing%20the%20comparison.";
+
   const comparisonData = [
     {
       bad: "Just Theory & Slides: You watch the instructor talk for 2 hours about 'AI concepts'.",
@@ -72,7 +75,7 @@ const ComparisonSection = () => {
         </motion.div>
 
         {/* Comparison Table */}
-        <div className="relative bg-neutral-900/40 backdrop-blur-xl rounded-[2.5rem] border border-neutral-800 p-6 md:p-12 shadow-2xl overflow-hidden">
+        <div className="relative bg-neutral-900/40 backdrop-blur-xl rounded-[2.5rem] border border-neutral-800 p-6 md:p-12 shadow-2xl overflow-hidden mb-16">
           <div className="hidden md:block absolute left-1/2 top-12 bottom-12 w-px bg-gradient-to-b from-transparent via-neutral-800 to-transparent -translate-x-1/2"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 mb-12">
@@ -112,6 +115,38 @@ const ComparisonSection = () => {
             ))}
           </div>
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+        >
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Make The Right Choice For Your Career
+            </h3>
+            
+            <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full max-w-2xl relative z-10 group">
+                <motion.button
+                    whileHover={{ scale: 1.02, y: -4 }}
+                    whileTap={{ scale: 0.98, y: 6, boxShadow: "none" }}
+                    className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-xl md:text-2xl font-black py-6 px-6 rounded-2xl shadow-[0_10px_0_rgb(0,100,30),0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_14px_0_rgb(0,100,30),0_30px_60px_rgba(0,255,100,0.25)] transition-all flex items-center justify-center gap-3 overflow-hidden border-t border-green-300/30"
+                >
+                    {/* Shine Effect */}
+                    <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '100%' }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                    />
+
+                    <span className="relative z-10 drop-shadow-md">Join The Top 1%</span>
+                    <ArrowRight className="relative z-10 w-6 h-6 ml-2" />
+                </motion.button>
+            </a>
+        </motion.div>
+
       </div>
     </section>
   );
