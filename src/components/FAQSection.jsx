@@ -1,26 +1,44 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Sparkles, Zap, ShieldCheck, Target, Minus } from 'lucide-react';
+import { Plus, Sparkles, Zap, ShieldCheck, Target, Minus, BookOpen, Currency } from 'lucide-react';
 
 const FAQSection = () => {
   const faqData = [
     {
       id: 1,
-      question: "I'm a beginner. Can I really learn this?",
+      question: "I'm a beginner. Can I really learn Agentic AI?",
       icon: <Target className="w-5 h-5" />,
-      answer: "Yes. Our Data Analyst & AI Certification starts from zero. We teach Python, SQL, and Excel from scratch before moving to advanced AI topics. For the Agentic Developer track, basic coding knowledge is recommended."
+      answer: "Absolutely. Our Agentic AI certification is designed for beginners and professionals alike. We cover everything from the basics of AI workflows to advanced autonomous agent deployment. No prior coding experience is required as we use powerful no-code/low-code tools."
     },
     {
       id: 2,
-      question: "How is this different from a ChatGPT course?",
+      question: "How is Agentic AI different from Data Analytics?",
       icon: <Zap className="w-5 h-5" />,
-      answer: "ChatGPT is a tool; Agentic AI is a system. Most courses teach you how to *talk* to AI. We teach you how to *build* AI that works for you—automating workflows, analyzing data, and executing tasks without human input."
+      answer: "Data Analytics focuses on analyzing historical data to generate insights using tools like Excel and Power BI. Agentic AI focuses on creating intelligent systems that act, decide, and automate tasks independently. One is about 'insight', the other is about 'action'."
     },
     {
       id: 3,
-      question: "Do you provide job placement support?",
+      question: "What tools will I learn in the Agentic AI program?",
+      icon: <BookOpen className="w-5 h-5" />,
+      answer: "You will master a suite of cutting-edge tools including Python & AI APIs, Prompt Engineering, Autonomous Agent Frameworks (like n8n or LangChain), and Workflow Automation tools. You'll build real-world AI implementations during the course."
+    },
+    {
+      id: 4,
+      question: "What job roles can I apply for after this course?",
       icon: <ShieldCheck className="w-5 h-5" />,
-      answer: "Absolutely. We have a network of 200+ hiring partners. Our career support includes resume optimization, mock interviews, portfolio building, and direct referrals to companies hiring for Data and AI roles."
+      answer: "Graduates can apply for high-demand roles such as AI Analyst, AI Automation Specialist, Junior AI Engineer, and AI Solutions Associate. The industry demand for these roles is growing rapidly."
+    },
+    {
+      id: 5,
+      question: "Do you offer placement support?",
+      icon: <Sparkles className="w-5 h-5" />,
+      answer: "Yes! We provide a 100% Placement Guarantee for eligible learners. This includes job-ready training, resume & LinkedIn optimization, mock interviews, and continuous job opportunities until you secure a position."
+    },
+    {
+      id: 6,
+      question: "Is there a 'Pay After Placement' option?",
+      icon: <Currency className="w-5 h-5" />,
+      answer: "Yes. Eligible candidates can opt for our Pay After Placement model, allowing you to pay the course fees only after you have successfully secured employment, as per the agreement terms."
     }
   ];
 
