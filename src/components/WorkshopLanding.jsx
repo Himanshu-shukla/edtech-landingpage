@@ -17,7 +17,7 @@ const WorkshopLanding = () => {
   };
 
   return (
-<section className="relative py-12 md:py-20 bg-neutral-950 text-white font-sans overflow-hidden flex items-center px-4 md:px-8">      
+    <section className="relative py-12 md:py-20 bg-neutral-950 text-white font-sans overflow-hidden flex items-center px-4 md:px-8">      
       {/* Ambient Space Grid & Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/10 blur-[130px] pointer-events-none rounded-full" />
@@ -37,15 +37,16 @@ const WorkshopLanding = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Data Science • Analytics • Agentic AI
+            Live 2-Day Implementation Bootcamp
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6">
-            Master the <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Tech Stack</span> <br className="hidden md:block" />
-            of the Future.
+            Stop Theory. Start <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Building Real Agents.</span>
           </h1>
           <p className="text-neutral-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-            We don't teach textbook theory. We train you to analyze data, build AI models, and deploy autonomous agents for the world's top enterprises.
+            Most courses show you slides. We build 5+ industry-grade AI agents live. 
+            Automate sales, support, and content creation by the time you leave.
           </p>
         </motion.div>
 
@@ -63,9 +64,10 @@ const WorkshopLanding = () => {
               className="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 shadow-2xl aspect-video cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent z-10"></div>
+              {/* Replace with a GIF of an n8n workflow or agent building process */}
               <img 
                 src="https://static.wixstatic.com/media/3cd83b_272809dcc1e14cd78dd6a235eaf3a4ed~mv2.gif" 
-                alt="AI Workflow" 
+                alt="Building AI Agent Workflow" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-80"
               />
               
@@ -77,7 +79,7 @@ const WorkshopLanding = () => {
 
               <div className="absolute top-4 left-4 z-20 bg-emerald-600 px-3 py-1 rounded-md text-xs font-bold tracking-widest uppercase flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
-                Live Class Preview
+                Live Build Session
               </div>
             </motion.div>
 
@@ -88,10 +90,10 @@ const WorkshopLanding = () => {
               transition={{ delay: 0.4 }}
               className="grid grid-cols-2 gap-4"
             >
-              <InfoCard icon={<Database className="w-5 h-5 text-yellow-400" />} label="Foundation" value="Data Analytics & SQL" />
-              <InfoCard icon={<Bot className="w-5 h-5 text-blue-400" />} label="Advanced" value="Generative AI & LLMs" />
-              <InfoCard icon={<Globe className="w-5 h-5 text-indigo-400" />} label="Format" value="Live Mentorship" />
-              <InfoCard icon={<Zap className="w-5 h-5 text-purple-400" />} label="Goal" value="Job Ready Portfolio" />
+              <InfoCard icon={<Database className="w-5 h-5 text-yellow-400" />} label="Platform" value="n8n, Make.com, Vapi" />
+              <InfoCard icon={<Bot className="w-5 h-5 text-blue-400" />} label="No-Code" value="Zero Coding Needed" />
+              <InfoCard icon={<Globe className="w-5 h-5 text-indigo-400" />} label="Language" value="English (Live)" />
+              <InfoCard icon={<Zap className="w-5 h-5 text-purple-400" />} label="Outcome" value="5 Deployment-Ready Agents" />
             </motion.div>
           </div>
 
@@ -105,33 +107,33 @@ const WorkshopLanding = () => {
             >
               <div className="space-y-6 mb-8">
                 <BenefitItem variants={itemVariants}>
-                  <span className="text-white font-semibold">Data Analyst Certification:</span> Master Python, SQL, and PowerBI to solve real business problems.
+                  <span className="text-white font-semibold">LinkedIn Content Agent:</span> Build an agent that researches, writes, and auto-posts viral content.
                 </BenefitItem>
 
                 <BenefitItem variants={itemVariants}>
-                  <span className="text-white font-semibold">Data Science & ML:</span> Learn to build predictive models and train algorithms on large datasets.
+                  <span className="text-white font-semibold">WhatsApp Sales Bot:</span> Create a 24/7 employee that qualifies leads and closes deals using RAG.
                 </BenefitItem>
                 
-                [Image of Data Analyst Career Path Diagram]
-
                 <BenefitItem variants={itemVariants}>
-                  <span className="text-white font-semibold">Agentic AI Development:</span> Go beyond chatbots. Build autonomous agents that execute workflows.
+                  <span className="text-white font-semibold">AI Voice Caller:</span> Deploy Vapi agents that handle customer calls like a human.
                 </BenefitItem>
 
                 <BenefitItem variants={itemVariants} border={false}>
-                  <span className="text-white font-semibold">Career Acceleration:</span> Resume reviews, mock interviews, and referrals to 200+ partners.
+                  <span className="text-white font-semibold">Agency Launchpad:</span> Get the pricing, proposal templates, and SOPs to sell these agents for ₹50k+.
                 </BenefitItem>
               </div>
 
               <motion.div variants={itemVariants} className="mt-auto">
-                <button className="group relative inline-flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-8 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-[1.02]">
-                  <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
-                  <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
-                    <Sparkles className="w-5 h-5 text-yellow-300" />
-                    View Career Tracks
-                    <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </button>
+                <a href="https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20enroll%20in%20the%20Agentic%20AI%20Masterclass." target="_blank" rel="noreferrer">
+                  <button className="group relative inline-flex h-16 w-full items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-8 shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-[1.02]">
+                    <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
+                    <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
+                      <Sparkles className="w-5 h-5 text-yellow-300" />
+                      Enroll for ₹999
+                      <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </button>
+                </a>
               </motion.div>
 
             </motion.div>

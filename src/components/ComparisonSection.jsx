@@ -5,49 +5,49 @@ import { XCircle, CheckCircle2, Sparkles, AlertTriangle, Scale } from 'lucide-re
 const ComparisonSection = () => {
   const comparisonData = [
     {
-      bad: "Watching endless tutorials without building real projects.",
+      bad: "Just Theory & Slides: You watch the instructor talk for 2 hours about 'AI concepts'.",
       good: (
         <>
-          Build <span className="text-white font-semibold">Live Enterprise Systems</span> (WhatsApp Bots, CRM Agents) from Day 1.
+          <span className="text-white font-semibold">100% Hands-On Build:</span> You open your laptop and build 5+ real agents along with us, step-by-step.
         </>
       ),
     },
     {
-      bad: "Learning outdated tools that will be automated by AI.",
+      bad: "The Upsell Trap: A teaser session that teaches nothing and pushes a ₹20k course.",
       good: (
         <>
-          Master the <span className="text-white font-semibold">Agentic Tech Stack</span> (LangGraph, CrewAI) that controls the automation.
+          <span className="text-white font-semibold">Complete Certification:</span> A full 2-day bootcamp. You leave with working skills, ready to take clients immediately.
         </>
       ),
     },
     {
-      bad: "Generic certificate that recruiters ignore.",
+      bad: "Basic Prompting: Teaching you how to use ChatGPT (which you already know).",
       good: (
         <>
-          Earn a <span className="text-white font-semibold">Microsoft-Aligned Certification</span> & a GitHub portfolio that proves your skills.
+          <span className="text-white font-semibold">Advanced Agentic Stack:</span> Master n8n, Vapi, and RAG pipelines to build autonomous systems, not just chatbots.
         </>
       ),
     },
     {
-      bad: "Applying to hundreds of jobs with no response.",
+      bad: "No Business Plan: You learn a skill but have no idea how to monetize it.",
       good: (
         <>
-          Direct referrals to our <span className="text-white font-semibold">200+ Hiring Partners</span> & internal placement team.
+          <span className="text-white font-semibold">Agency In A Box:</span> Includes proposal templates, pricing guides, and a roadmap to your first ₹50k client.
         </>
       ),
     },
     {
-      bad: "Isolating self-study with zero feedback.",
+      bad: "Zero Support: If you get stuck, you're on your own.",
       good: (
         <>
-          <span className="text-white font-semibold">Live Mentorship</span> & code reviews from Senior Architects.
+          <span className="text-white font-semibold">Lifetime Community:</span> Get access to our alumni network for debugging help and job opportunities.
         </>
       ),
     },
   ];
 
   return (
-    <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
+    <section className="relative py-12 md:py-20 px-4 bg-neutral-950 font-sans overflow-hidden">
       {/* Background Grid & Glows */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
@@ -61,12 +61,12 @@ const ComparisonSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 text-sm font-bold tracking-widest uppercase mb-6">
             <Scale className="w-4 h-4 text-emerald-400" />
-            <span>The Choice is Yours</span>
+            <span>The Reality Check</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
-            Stop Learning in the Past. <br />
+            Not All "Masterclasses" <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-              Build for the Future.
+              Are Created Equal.
             </span>
           </h2>
         </motion.div>
@@ -78,11 +78,11 @@ const ComparisonSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 mb-12">
             <div className="flex items-center justify-center gap-3 text-neutral-500 font-black text-xs md:text-sm uppercase tracking-[0.2em]">
               <AlertTriangle className="w-4 h-4 text-neutral-600" />
-              Standard Online Courses
+              Typical ₹99 Webinars
             </div>
             <div className="flex items-center justify-center gap-3 text-emerald-400 font-black text-xs md:text-sm uppercase tracking-[0.2em]">
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              EdTech Informative
+              Agentic AI Bootcamp
             </div>
           </div>
 

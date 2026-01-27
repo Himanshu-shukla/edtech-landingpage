@@ -4,15 +4,15 @@ import { ShieldCheck, Globe, Building2 } from 'lucide-react';
 
 const AlumniSection = () => {
   const row1 = [
-    { name: "Google" }, { name: "Microsoft" }, { name: "Accenture" }, 
-    { name: "Deloitte" }, { name: "Amazon" }, { name: "Salesforce" },
-    { name: "IBM" }, { name: "Oracle" }
+    { name: "Zomato" }, { name: "Swiggy" }, { name: "Cred" }, 
+    { name: "Razorpay" }, { name: "Zerodha" }, { name: "Flipkart" },
+    { name: "Myntra" }, { name: "Paytm" }
   ];
 
   const row2 = [
-    { name: "JPMorgan" }, { name: "Goldman Sachs" }, { name: "Uber" }, 
-    { name: "Airbnb" }, { name: "Spotify" }, { name: "Meta" }, 
-    { name: "Netflix" }, { name: "Tesla" }
+    { name: "TCS" }, { name: "Infosys" }, { name: "Wipro" }, 
+    { name: "Accenture" }, { name: "Deloitte" }, { name: "HDFC Bank" }, 
+    { name: "ICICI" }, { name: "Reliance" }
   ];
 
   return (
@@ -27,17 +27,17 @@ const AlumniSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black tracking-[0.2em] uppercase mb-6">
             <Building2 className="w-3 h-3" />
-            <span>Career Impact</span>
+            <span>Trusted Ecosystem</span>
           </div>
           
           <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
-            Our alumni work at <br className="hidden md:block" />
+            Join 16,000+ professionals from <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400">
-              the world's top tech companies.
+              India's top companies.
             </span>
           </h2>
           <p className="mt-6 text-neutral-500 text-lg font-medium max-w-2xl mx-auto">
-            From Silicon Valley to global finance, EdTech Informative graduates are leading the data revolution.
+            Our students are automating workflows and leading AI initiatives at these industry giants.
           </p>
         </motion.div>
 
@@ -55,13 +55,13 @@ const AlumniSection = () => {
           <div className="flex items-center gap-3">
             <Globe className="w-5 h-5 text-emerald-500" />
             <span className="text-neutral-400 font-bold text-sm tracking-widest uppercase">
-              Alumni Network: <span className="text-white">200+ Partners</span>
+              Community: <span className="text-white">16,000+ Alumni</span>
             </span>
           </div>
           <div className="flex items-center gap-3">
             <ShieldCheck className="w-5 h-5 text-emerald-500" />
             <span className="text-neutral-400 font-bold text-sm tracking-widest uppercase">
-              Placement Rate: <span className="text-white">95% Success</span>
+              Rating: <span className="text-white">4.8/5 Average</span>
             </span>
           </div>
         </motion.div>

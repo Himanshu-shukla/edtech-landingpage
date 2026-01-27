@@ -1,63 +1,63 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Bot, Terminal, GitBranch } from 'lucide-react';
+import { CheckCircle2, Bot, Terminal, Calendar } from 'lucide-react';
 
 const CurriculumSection = () => {
-  // Data aligned with "Professional Agentic AI Developer Program"
+  // Data aligned with "2-Day Agentic AI Certification Bootcamp"
   const curriculumData = [
     {
-      dayLabel: "PHASE 01",
+      dayLabel: "DAY 01",
       icon: <Terminal className="w-4 h-4" />,
-      title: "Data & AI Fundamentals",
+      title: "Core Foundations & First Builds",
       imageSrc: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop",
       items: [
         {
           id: 1,
-          highlight: "Core Data Skills:",
-          text: " Python, SQL, and Pandas mastery. Learn to manipulate the data that feeds intelligent systems."
+          highlight: "Agentic AI Fundamentals:",
+          text: " Understand workflows, memory, tools, and decision-making logic. No coding required."
         },
         {
           id: 2,
-          highlight: "LLM Integration:",
-          text: " Understanding OpenAI API, Vector Databases (Pinecone), and Embedding models."
+          highlight: "LinkedIn Content Agent:",
+          text: " LIVE BUILD: An agent that researches trends, writes posts, and auto-publishes to your profile."
         },
         {
           id: 3,
-          highlight: "Prompt Engineering++:",
-          text: " Moving beyond basic prompts to Chain-of-Thought reasoning and structured outputs (JSON)."
+          highlight: "Smart Email Manager:",
+          text: " LIVE BUILD: An agent that drafts replies, organizes inbox, and flags high-priority emails automatically."
         },
         {
           id: 4,
-          highlight: "Responsible AI:",
-          text: " Ethics, bias detection, and safety frameworks for enterprise deployment."
+          highlight: "WhatsApp Sales Bot:",
+          text: " LIVE BUILD: A RAG-based agent that answers customer FAQs and closes leads 24/7."
         }
       ]
     },
     {
-      dayLabel: "PHASE 02",
-      icon: <GitBranch className="w-4 h-4" />,
-      title: "Building Agentic Systems",
+      dayLabel: "DAY 02",
+      icon: <Calendar className="w-4 h-4" />,
+      title: "Advanced Systems & Monetization",
       imageSrc: "https://miro.medium.com/v2/resize:fit:2000/1*J-WePR99V191s1cNInJ7NA.png",
       items: [
         {
           id: 1,
-          highlight: "Autonomous Agents:",
-          text: " Architecture of agents that plan, reason, and use tools (Browsing, Calculators, APIs)."
+          highlight: "AI Voice Caller:",
+          text: " LIVE BUILD: Create a voice agent (using Vapi) that talks like a human to handle support calls."
         },
         {
           id: 2,
-          highlight: "Multi-Agent Orchestration:",
-          text: " Building swarms where specialized agents collaborate (e.g., Researcher + Writer + Editor)."
+          highlight: "Multi-Agent Systems:",
+          text: " Orchestrate a team of agents (Researcher + Writer + Editor) for complex marketing workflows."
         },
         {
           id: 3,
-          highlight: "Agentic Workflows:",
-          text: " Implementing Human-in-the-Loop systems for critical enterprise decision making."
+          highlight: "Build Your First AI App:",
+          text: " Concept to Launch. Learn to package your automation into a sellable product."
         },
         {
           id: 4,
-          highlight: "Capstone Deployment:",
-          text: " Build and deploy a real-world 'Nugget' style support bot that handles refunds and tickets."
+          highlight: "Agency Roadmap:",
+          text: " The Blueprint: How to package, price (₹50K+), and sell these services to international clients."
         }
       ]
     }
@@ -74,7 +74,9 @@ const CurriculumSection = () => {
   };
 
   return (
-<section className="relative py-12 md:py-20 px-4 bg-neutral-950 font-sans overflow-hidden">      {/* Background Effects */}
+    <section className="relative py-12 md:py-20 px-4 bg-neutral-950 font-sans overflow-hidden">
+      
+      {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/5 blur-[120px] pointer-events-none rounded-full" />
@@ -90,16 +92,16 @@ const CurriculumSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold uppercase tracking-widest mb-6">
             <Bot className="w-4 h-4" />
-            <span>Flagship Program Syllabus</span>
+            <span>2-Day Live Bootcamp Agenda</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-            The Roadmap to <br /> 
+            What You'll Build in <br /> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-              Agentic Mastery
+              One Weekend.
             </span>
           </h2>
           <p className="text-neutral-400 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-            A deep dive into our most advanced track. From foundational Data Science to deploying autonomous swarms.
+            10+ Hours of Live Training. 5+ Real Projects. Deployment Ready.
           </p>
         </motion.div>
 

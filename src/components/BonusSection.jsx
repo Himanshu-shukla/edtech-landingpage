@@ -1,46 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Database, ShieldCheck, FileCode, Gift, Sparkles, Check, Briefcase, FileText } from 'lucide-react';
+import { FileJson, LayoutTemplate, ShieldCheck, Gift, Sparkles, Check, Briefcase, Video } from 'lucide-react';
 
 const BonusSection = () => {
   const bonuses = [
     {
       id: 1,
       label: "BONUS 1",
-      value: "$399",
-      title: "The '6-Figure' Career Roadmap",
-      text: "Step-by-step guide to transition from a Junior Analyst/Dev to a Senior AI Consultant in 12 months.",
-      icon: <Terminal className="w-16 h-16 md:w-20 md:h-20 text-emerald-400" strokeWidth={1.5} />,
+      value: "₹15,000",
+      title: "5+ Agentic Workflow Blueprints",
+      text: "Don't build from scratch. Get the exact JSON files for our LinkedIn, WhatsApp, and Voice agents. Import them into n8n and start selling instantly.",
+      icon: <FileJson className="w-16 h-16 md:w-20 md:h-20 text-emerald-400" strokeWidth={1.5} />,
       color: "from-emerald-500",
       glow: "from-emerald-500/20 to-teal-500/10"
     },
     {
       id: 2,
       label: "BONUS 2",
-      value: "$499",
-      title: "Production Code Vault",
-      text: "Copy-paste Python & SQL snippets for Data Cleaning, RAG Pipelines, and Multi-Agent Swarms.",
-      icon: <FileCode className="w-16 h-16 md:w-20 md:h-20 text-cyan-400" strokeWidth={1.5} />,
+      value: "₹10,000",
+      title: "The 'First 3 Clients' Roadmap",
+      text: "A 30-day action plan with cold outreach scripts, proposal templates, and pricing calculators to land your first ₹50k project.",
+      icon: <Briefcase className="w-16 h-16 md:w-20 md:h-20 text-cyan-400" strokeWidth={1.5} />,
       color: "from-cyan-500",
       glow: "from-cyan-500/20 to-blue-500/10"
     },
     {
       id: 3,
       label: "BONUS 3",
-      value: "$599",
-      title: "Freelance Agency Starter Kit",
-      text: "Contracts, proposal templates, and pricing calculators to sell your new AI skills to clients immediately.",
-      icon: <Briefcase className="w-16 h-16 md:w-20 md:h-20 text-purple-400" strokeWidth={1.5} />,
+      value: "₹5,000",
+      title: "Lifetime Recording Access",
+      text: "Missed a step during the live build? You get lifetime access to the HD recordings of the bootcamp to rewatch and practice at your own pace.",
+      icon: <Video className="w-16 h-16 md:w-20 md:h-20 text-purple-400" strokeWidth={1.5} />,
       color: "from-purple-500",
       glow: "from-purple-500/20 to-indigo-500/10"
     },
     {
       id: 4,
       label: "BONUS 4",
-      value: "$299",
-      title: "FAANG Interview Crusher",
-      text: "Real interview questions from Google & Microsoft for Data Science and AI Engineering roles.",
-      icon: <FileText className="w-16 h-16 md:w-20 md:h-20 text-blue-400" strokeWidth={1.5} />,
+      value: "Priceless",
+      title: "Private Community Access",
+      text: "Join our exclusive WhatsApp group of 16,000+ alumni. Network, share wins, and get help debugging your agent workflows.",
+      icon: <LayoutTemplate className="w-16 h-16 md:w-20 md:h-20 text-blue-400" strokeWidth={1.5} />,
       color: "from-blue-500",
       glow: "from-blue-500/20 to-cyan-500/10"
     }
@@ -57,7 +57,7 @@ const BonusSection = () => {
   };
 
   return (
-    <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
+    <section className="relative py-12 md:py-20 px-4 bg-neutral-950 font-sans overflow-hidden">
       {/* Ambient Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
@@ -70,13 +70,13 @@ const BonusSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold uppercase tracking-widest mb-6">
             <Gift className="w-4 h-4" />
-            <span>Limited Time Offer</span>
+            <span>Total Value: ₹42,000+</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400">Career Launchpad</span> Toolkit
+            Included <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400">FREE</span> When You Join Today
           </h2>
           <p className="text-neutral-400 text-lg md:text-xl font-medium">
-            Enroll today and instantly unlock <span className="text-emerald-400 font-bold">$1,700+</span> of career-accelerating assets for free.
+            We don't just teach you skills; we give you the business assets to monetize them immediately.
           </p>
         </motion.div>
 

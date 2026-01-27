@@ -4,7 +4,8 @@ import { Zap, BarChart3, Bot, Rocket, ArrowRight } from 'lucide-react';
 
 const WhyAgenticAI = () => {
   return (
-<section className="relative w-full bg-neutral-950 py-12 md:py-24 px-4 flex justify-center overflow-hidden font-sans">      
+    <section className="relative w-full bg-neutral-950 py-12 md:py-24 px-4 flex justify-center overflow-hidden font-sans">
+      
       {/* Ambient Space Grid & Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/10 blur-[120px] pointer-events-none rounded-full" />
@@ -28,12 +29,12 @@ const WhyAgenticAI = () => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold tracking-wide uppercase mb-6">
               <Rocket className="w-4 h-4" />
-              <span>Future-Proof Your Career</span>
+              <span>Not Another Webinar</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-center tracking-tight leading-tight max-w-3xl">
-              Why the industry demands <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Agentic Orchestrators.</span>
+              Why this bootcamp is <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Worth Your Time.</span>
             </h2>
           </motion.div>
 
@@ -46,7 +47,7 @@ const WhyAgenticAI = () => {
               icon={<Zap className="w-8 h-8 text-yellow-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">Beyond Chatbots:</span> The market is flooded with basic AI wrappers. Real value lies in <span className="text-white font-bold">Autonomous Agents</span> that can reason, plan, and execute complex business tasks without human help.
+                  <span className="text-white font-bold">Builds, Not Slides:</span> Stop watching scattered YouTube tutorials. We build <span className="text-white font-bold">5+ working agents live</span> in class that you can deploy immediately.
                 </>
               }
             />
@@ -57,7 +58,7 @@ const WhyAgenticAI = () => {
               icon={<BarChart3 className="w-8 h-8 text-blue-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">Data Driven Decisions:</span> AI without data is hallucination. We teach you the <span className="text-white font-bold">Data Science & Analytics</span> foundation required to feed agents the right information.
+                  <span className="text-white font-bold">Save 30+ Hours/Week:</span> Automate your daily office grunt work. From emails to reports, learn to delegate manual tasks to <span className="text-white font-bold">AI Agents</span> forever.
                 </>
               }
             />
@@ -68,7 +69,7 @@ const WhyAgenticAI = () => {
               icon={<Bot className="w-8 h-8 text-emerald-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">Career Arbitrage:</span> "Prompt Engineers" are being fired. <span className="text-white font-bold">Agentic Developers</span> are being hired at 30-50% salary premiums to build the enterprise workforce of tomorrow.
+                  <span className="text-white font-bold">Agency Blueprint:</span> Don't just learn skills, learn to sell them. Get our roadmap to launch a <span className="text-white font-bold">1-Person AI Agency</span> and charge ₹50k+ per client.
                 </>
               }
             />
@@ -82,13 +83,15 @@ const WhyAgenticAI = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <button className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 shadow-[0_0_40px_-10px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-105">
-              <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
-              <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
-                Start Your Transformation
-                <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-              </span>
-            </button>
+            <a href="https://wa.me/919810249170?text=Hi%2C%20I%20am%20interested%20in%20the%20Agentic%20AI%20bootcamp." target="_blank" rel="noreferrer">
+              <button className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 shadow-[0_0_40px_-10px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-105">
+                <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
+                <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
+                  Become an AI Expert Today
+                  <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                </span>
+              </button>
+            </a>
           </motion.div>
 
         </div>

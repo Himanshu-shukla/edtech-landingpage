@@ -6,51 +6,51 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Arjun Mehta",
-      role: "Operations Director, Logistics Co.",
-      initials: "AM",
-      type: "Agency Client",
-      text: "The Agentic AI workflow integrated by the team was a game-changer. We automated 70% of our supply chain ticketing, saving us nearly $15k monthly in overhead. They didn't just give us a tool; they gave us a digital workforce."
+      name: "Meera Joshi",
+      role: "Tech Consultant",
+      initials: "MJ",
+      type: "Bootcamp Graduate",
+      text: "The practical case studies showed me exactly what clients are willing to pay premium prices for. I closed my first ₹50K automation project just 2 weeks after the workshop. Game-changing content!"
     },
     {
       id: 2,
-      name: "Sarah Jenkins",
-      role: "SDE-2 → AI Solutions Architect",
-      initials: "SJ",
-      type: "Course Alumni",
-      text: "I was stuck in a standard dev role. This bootcamp taught me how to build autonomous agents, not just prompts. Three weeks after finishing, I landed a Senior AI Architect role with a 65% salary hike."
+      name: "Arjun Desai",
+      role: "Entrepreneur",
+      initials: "AD",
+      type: "Business Owner",
+      text: "I went from zero AI knowledge to automating my entire lead qualification process. The templates and scripts provided are pure gold. It feels like I hired 3 employees over the weekend."
     },
     {
       id: 3,
-      name: "Vikram Malhotra",
-      role: "Founder, e-Commerce Brand",
-      initials: "VM",
-      type: "Agency Client",
-      text: "Our customer support was drowning. The team deployed a custom AI Email Bot that handles refunds and tracking with 95% accuracy. It feels like we hired 5 people overnight, but for a fraction of the cost."
+      name: "Priya Sharma",
+      role: "Digital Marketing Consultant",
+      initials: "PS",
+      type: "Freelancer",
+      text: "I built my first ₹75,000 project within 3 weeks of attending this masterclass. The step-by-step approach to building the 'LinkedIn Content Agent' made everything click for me."
     },
     {
       id: 4,
-      name: "Elena Rodriguez",
-      role: "Freelance Automation Expert",
-      initials: "ER",
-      type: "Course Alumni",
-      text: "I used to charge $50/hr for basic coding. Now I sell 'Workflow Transformation' packages starting at $5k using the Agentic AI stack I learned here. My clients are blown away by the ROI."
+      name: "Rahul Kumar",
+      role: "Software Developer",
+      initials: "RK",
+      type: "Bootcamp Graduate",
+      text: "From struggling with basic automations to closing a ₹1.2L voice agent project. This masterclass completely changed my business trajectory. The n8n blueprints alone were worth the price."
     },
     {
       id: 5,
-      name: "David Chen",
-      role: "Head of Support, Fintech Startup",
-      initials: "DC",
-      type: "Agency Client",
-      text: "Implementing the Image Analyzer for KYC verification has cut our processing time from 4 hours to 40 seconds. The accuracy is terrifyingly good. If you aren't using their agentic solutions, you're falling behind."
+      name: "Anita Patel",
+      role: "Small Business Owner",
+      initials: "AP",
+      type: "Business Owner",
+      text: "The demos alone were worth 10x the price. I finally understood how to package my skills professionally. I've automated my invoice processing and saved 15 hours a week."
     },
     {
       id: 6,
-      name: "Priya Sharma",
-      role: "Product Manager",
-      initials: "PS",
-      type: "Course Alumni",
-      text: "The most practical AI course I've ever taken. We moved past the 'ChatGPT hype' and actually built an autonomous research agent for our product roadmap. It’s now a core part of our weekly sprint planning."
+      name: "Vikram Singh",
+      role: "Freelance Developer",
+      initials: "VS",
+      type: "Freelancer",
+      text: "Within a month, I landed my first ₹1.8L automation contract. The agency blueprint taught me how to pitch value, not just hours. If you want to start an AI agency, this is it."
     }
   ];
 
@@ -80,16 +80,16 @@ const TestimonialSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
             <ShieldCheck className="w-4 h-4" />
-            <span>Proven Results</span>
+            <span>Student Success</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-            Real Efficiency. <br className="hidden md:block" />
+            Real Results. <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-              Real Agentic Impact.
+              Real Revenue.
             </span>
           </h2>
           <p className="mt-6 text-neutral-400 text-lg max-w-2xl mx-auto">
-            Whether it's training individuals for $100k+ roles or deploying agents that save companies millions—we deliver.
+            See how professionals are using Agentic AI to save time and build profitable one-person agencies.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ const TestimonialSection = () => {
               whileHover={{ y: -5 }}
               className="break-inside-avoid relative bg-neutral-900/40 backdrop-blur-md rounded-2xl p-8 border border-neutral-800 shadow-xl flex flex-col gap-5 group transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.1)]"
             >
-              <div className={`absolute top-6 right-6 px-2 py-0.5 rounded bg-neutral-800 text-[10px] font-bold uppercase tracking-widest border border-neutral-700 ${review.type === "Agency Client" ? "text-cyan-400" : "text-emerald-400"}`}>
+              <div className={`absolute top-6 right-6 px-2 py-0.5 rounded bg-neutral-800 text-[10px] font-bold uppercase tracking-widest border border-neutral-700 ${review.type === "Business Owner" ? "text-cyan-400" : "text-emerald-400"}`}>
                 {review.type}
               </div>
 
@@ -132,7 +132,7 @@ const TestimonialSection = () => {
               <div className="text-neutral-300 leading-relaxed text-sm md:text-base relative z-10 font-normal tracking-wide italic">"{review.text}"</div>
 
               <div className="flex justify-end opacity-20 group-hover:opacity-100 transition-opacity">
-                {review.type === "Agency Client" ? <Bot className="w-5 h-5 text-cyan-400" /> : <Briefcase className="w-5 h-5 text-emerald-400" />}
+                {review.type === "Business Owner" ? <Bot className="w-5 h-5 text-cyan-400" /> : <Briefcase className="w-5 h-5 text-emerald-400" />}
               </div>
             </motion.div>
           ))}

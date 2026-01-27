@@ -7,20 +7,20 @@ const IrreplaceableSkillsSection = () => {
     {
       id: 1,
       icon: <Network className="w-5 h-5" />,
-      title: "Orchestration, Not Management",
-      description: "Stop managing human headcount and start orchestrating digital workforces. Learn to deploy agents that handle high-volume operations 24/7."
+      title: "Master the Tools",
+      description: "Stop watching from the sidelines. Get hands-on mastery of the Agentic Stack: n8n, Make.com, Vapi, and OpenAI. You will leave with working agents on your own laptop."
     },
     {
       id: 2,
       icon: <Terminal className="w-5 h-5" />,
-      title: "10x Engineering Velocity",
-      description: "Move beyond 'writing code' to 'designing systems that write code.' Master agentic workflows that automate your own development lifecycle."
+      title: "Automate Your Work",
+      description: "Identify the high-value tasks in your job that eat up your time. Build custom agents to handle them, freeing you up for strategic work and making you the top performer."
     },
     {
       id: 3,
       icon: <ShieldCheck className="w-5 h-5" />,
-      title: "The Compliance Gatekeeper",
-      description: "As AI scales, safety is paramount. Become the expert who builds, audits, and secures autonomous business logic against hallucinations."
+      title: "Launch Your Agency",
+      description: "Take the 'Scale Blueprint' home. Use our pricing models, proposal templates, and delivery SOPs to start closing ₹50k+ automation projects within 30 days."
     }
   ];
 
@@ -38,16 +38,16 @@ const IrreplaceableSkillsSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
             <Cpu className="w-4 h-4" />
-            <span>The Agentic Edge</span>
+            <span>Your 2-Day Transformation</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-            Transition from AI User to <br />
+            From "AI Curious" to <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-              Agentic Architect
+              AI Consultant.
             </span>
           </h2>
           <p className="text-neutral-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            The world doesn't need more prompt engineers. It needs architects who can build the autonomous systems that power the next decade.
+            This isn't just a course; it's a career pivot. Here is the exact trajectory you will follow during and after the bootcamp.
           </p>
         </motion.div>
 
@@ -67,7 +67,7 @@ const IrreplaceableSkillsSection = () => {
                   <span className="text-emerald-400 group-hover:text-cyan-300 transition-colors">{benefit.icon}</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 mt-2 md:mt-6 flex items-center gap-3">
-                  <span className="text-emerald-500 font-black text-xs md:text-sm bg-emerald-500/10 px-2 py-1 rounded-md border border-emerald-500/20 uppercase tracking-tighter">Phase 0{benefit.id}</span>
+                  <span className="text-emerald-500 font-black text-xs md:text-sm bg-emerald-500/10 px-2 py-1 rounded-md border border-emerald-500/20 uppercase tracking-tighter">Step 0{benefit.id}</span>
                   {benefit.title}
                 </h3>
                 <motion.div whileHover={{ y: -5 }} className="bg-neutral-900/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-neutral-800 shadow-xl group-hover:border-emerald-500/30 group-hover:bg-neutral-800/80 transition-all duration-300">

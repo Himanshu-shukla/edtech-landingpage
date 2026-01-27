@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Building2, Briefcase, Star } from 'lucide-react';
+import { Users, Clock, TrendingUp, Award } from 'lucide-react';
 
 const CareerStats = () => {
   return (
@@ -9,34 +9,34 @@ const CareerStats = () => {
           
           <div className="flex flex-col items-center text-center p-4">
             <div className="text-emerald-500 mb-2">
-                <Star className="w-6 h-6 fill-emerald-500" />
-            </div>
-            <h3 className="text-3xl font-black text-white">4.1/5</h3>
-            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Trustpilot Score</p>
-          </div>
-
-          <div className="flex flex-col items-center text-center p-4 border-l border-neutral-800">
-             <div className="text-emerald-500 mb-2">
-                <Building2 className="w-6 h-6" />
-            </div>
-            <h3 className="text-3xl font-black text-white">200+</h3>
-            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Hiring Partners</p>
-          </div>
-
-          <div className="flex flex-col items-center text-center p-4 border-l border-neutral-800">
-             <div className="text-emerald-500 mb-2">
                 <Users className="w-6 h-6" />
             </div>
-            <h3 className="text-3xl font-black text-white">150+</h3>
-            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Hours of Live Training</p>
+            <h3 className="text-3xl font-black text-white">16,000+</h3>
+            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Professionals Trained</p>
           </div>
 
           <div className="flex flex-col items-center text-center p-4 border-l border-neutral-800">
              <div className="text-emerald-500 mb-2">
-                <Briefcase className="w-6 h-6" />
+                <Clock className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-white">30+ Hrs</h3>
+            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Saved Per Week</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center p-4 border-l border-neutral-800">
+             <div className="text-emerald-500 mb-2">
+                <TrendingUp className="w-6 h-6" />
+            </div>
+            <h3 className="text-3xl font-black text-white">₹2L+</h3>
+            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Potential Client Value</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center p-4 border-l border-neutral-800">
+             <div className="text-emerald-500 mb-2">
+                <Award className="w-6 h-6" />
             </div>
             <h3 className="text-3xl font-black text-white">100%</h3>
-            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Job Assistance</p>
+            <p className="text-xs uppercase tracking-widest text-neutral-500 mt-1">Refund Guarantee</p>
           </div>
 
         </div>
