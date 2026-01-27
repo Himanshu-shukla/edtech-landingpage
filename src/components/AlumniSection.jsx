@@ -41,9 +41,10 @@ const AlumniSection = () => {
           </p>
         </motion.div>
 
+        {/* Marquee Rows */}
         <div className="relative flex flex-col gap-12 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-          <MarqueeRow items={row1} direction="left" />
-          <MarqueeRow items={row2} direction="right" />
+          <MarqueeRow items={row1} direction="left" speed={30} />
+          <MarqueeRow items={row2} direction="right" speed={30} />
         </div>
 
         <motion.div 
@@ -71,22 +72,34 @@ const AlumniSection = () => {
   );
 };
 
-const MarqueeRow = ({ items, direction }) => {
+// --- FIX: Using Framer Motion for the Marquee ---
+const MarqueeRow = ({ items, direction, speed }) => {
   return (
     <div className="flex w-full overflow-hidden select-none">
-      <div 
-        className={`flex w-max items-center justify-around gap-24 px-12 ${
-          direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
-        }`}
+      <motion.div
+        // 1. Initial Position: 'left' starts at 0, 'right' starts at -50% (halfway)
+        initial={{ x: direction === "left" ? "0%" : "-50%" }}
+        
+        // 2. Animate To: 'left' moves to -50%, 'right' moves to 0%
+        animate={{ x: direction === "left" ? "-50%" : "0%" }}
+        
+        // 3. Infinite Linear Loop
+        transition={{
+          duration: speed || 20,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+        className="flex w-max items-center justify-around gap-24 px-12"
       >
-        {[...items, ...items].map((brand, index) => (
+        {/* We duplicate the items 4 times to ensure seamless scrolling on large screens */}
+        {[...items, ...items, ...items, ...items].map((brand, index) => (
           <div key={`${brand.name}-${index}`} className="flex flex-col items-center justify-center gap-2 group cursor-default">
             <span className="text-3xl md:text-4xl font-black text-neutral-800 transition-all duration-300 group-hover:text-emerald-500/50 tracking-tighter uppercase whitespace-nowrap">
               {brand.name}
             </span>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
