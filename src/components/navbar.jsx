@@ -13,10 +13,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'AI Services', href: '#', hasDropdown: true },
-    { name: 'Workflows', href: '#', hasDropdown: false },
-    { name: 'Impact', href: '#', hasDropdown: false },
-    { name: 'Foundry Academy', href: '#', hasDropdown: true },
+    { name: 'Career Tracks', href: '#programs', hasDropdown: true },
+    { name: 'Mentorship', href: '#mentorship', hasDropdown: false },
+    { name: 'Success Stories', href: '#reviews', hasDropdown: false },
+    { name: 'Blog', href: '#blog', hasDropdown: false },
   ];
 
   return (
@@ -30,12 +30,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
-        <div className="cursor-pointer">
-          <img
-            src="https://edtechinformative.uk/assets/WHITE-LOGO--300x152-C0gQERKq.png"
-            alt="Edtech Informative"
-            className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-          />
+        <div className="cursor-pointer flex items-center gap-2">
+          {/* Using a text fallback if image fails, or keep your image */}
+          <div className="font-black text-xl tracking-tighter text-white">
+            EDTECH<span className="text-emerald-500">INFORMATIVE</span>
+          </div>
         </div>
 
         {/* Desktop Nav */}
@@ -44,7 +43,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="group flex items-center gap-1.5 text-[13px] font-black uppercase tracking-[0.15em]
+              className="group flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.1em]
                          text-neutral-400 hover:text-emerald-400 transition-colors"
             >
               {link.name}
@@ -56,25 +55,25 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           <button
-            className="text-[13px] font-black uppercase tracking-widest
-                       text-neutral-300 hover:text-emerald-400 transition-colors"
+            className="text-[13px] font-bold uppercase tracking-widest
+                       text-neutral-300 hover:text-white transition-colors"
           >
-            Client Portal
+            Student Login
           </button>
 
           <button
-            className="group relative bg-emerald-600 text-white px-7 py-3 rounded-xl
+            className="group relative bg-white text-neutral-950 px-6 py-2.5 rounded-lg
                        font-black text-xs uppercase tracking-widest
                        transition-all duration-300
-                       hover:bg-emerald-500
-                       hover:shadow-[0_0_30px_rgba(16,185,129,0.45)]
+                       hover:bg-emerald-400 hover:text-black
+                       hover:shadow-[0_0_20px_rgba(52,211,153,0.4)]
                        active:scale-95"
           >
             <span className="flex items-center gap-2">
-              Book Deployment
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Get Counseling
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
         </div>
@@ -95,33 +94,33 @@ const Navbar = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="fixed inset-0 top-[76px] bg-neutral-950 p-8 lg:hidden flex flex-col gap-8"
+            className="fixed inset-0 top-[76px] bg-neutral-950 p-8 lg:hidden flex flex-col gap-8 border-t border-neutral-800"
           >
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between text-2xl font-black uppercase
+                className="flex items-center justify-between text-xl font-black uppercase
                            text-neutral-200 hover:text-emerald-400 transition-colors"
               >
                 {link.name}
-                {link.hasDropdown && <ChevronDown className="w-6 h-6" />}
+                {link.hasDropdown && <ChevronDown className="w-5 h-5" />}
               </a>
             ))}
 
             <div className="mt-auto flex flex-col gap-4">
               <button className="w-full bg-neutral-900 border border-neutral-800
-                                 text-white py-5 rounded-2xl font-black uppercase tracking-widest
-                                 hover:border-emerald-600">
-                Client Portal
+                                 text-white py-4 rounded-xl font-bold uppercase tracking-widest
+                                 hover:border-emerald-600 transition-colors">
+                Student Login
               </button>
 
-              <button className="w-full bg-emerald-600 text-white py-5 rounded-2xl
+              <button className="w-full bg-emerald-600 text-white py-4 rounded-xl
                                  font-black uppercase tracking-widest
                                  hover:bg-emerald-500
                                  shadow-lg shadow-emerald-900/30">
-                Book Deployment
+                Book Free Session
               </button>
             </div>
           </motion.div>

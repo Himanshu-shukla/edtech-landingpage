@@ -18,6 +18,8 @@ import FAQSection from './components/FAQSection.jsx'
 import FoundryHero from './components/FoundryHero.jsx'
 import Navbar from './components/navbar.jsx'
 import VideoShowcase from './components/VideoShowcase.jsx'
+import ProgramsSection from './components/ProgramsSection.jsx'
+import CareerStats from './components/CareerStats.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +28,8 @@ function App() {
     <>
     <Navbar/>
     <FoundryHero/>
+    <ProgramsSection/>
+    <CareerStats/>
       <WorkshopLanding />
       <CareerWarningSection />
       <VideoShowcase />

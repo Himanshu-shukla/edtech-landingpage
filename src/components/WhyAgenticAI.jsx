@@ -10,7 +10,7 @@ const WhyAgenticAI = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/10 blur-[120px] pointer-events-none rounded-full" />
 
-      {/* Main Glassmorphism Container */}
+      {/* Main Container */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -20,7 +20,7 @@ const WhyAgenticAI = () => {
       >
         <div className="flex flex-col items-center">
           
-          {/* Animated Header */}
+          {/* Header */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,15 +29,16 @@ const WhyAgenticAI = () => {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold tracking-wide uppercase mb-6">
               <Rocket className="w-4 h-4" />
-              <span>The Era of Autonomy</span>
+              <span>Future-Proof Your Career</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-center tracking-tight leading-tight max-w-3xl">
-              Why the future belongs to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Agentic Orchestrators.</span>
+              Why the industry demands <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Agentic Orchestrators.</span>
             </h2>
           </motion.div>
 
-          {/* Aceternity Spotlight Cards Grid */}
+          {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 w-full">
             
             <SpotlightCard 
@@ -46,7 +47,7 @@ const WhyAgenticAI = () => {
               icon={<Zap className="w-8 h-8 text-yellow-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">From Chat to Action:</span> Static AI answers; Agentic AI <span className="text-white font-bold">executes.</span> Master the shift from prompting to building autonomous workflows.
+                  <span className="text-white font-bold">Beyond Chatbots:</span> The market is flooded with basic AI wrappers. Real value lies in <span className="text-white font-bold">Autonomous Agents</span> that can reason, plan, and execute complex business tasks without human help.
                 </>
               }
             />
@@ -57,7 +58,7 @@ const WhyAgenticAI = () => {
               icon={<BarChart3 className="w-8 h-8 text-blue-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">Massive ROI:</span> Enterprises are replacing fragmented tools with unified <span className="text-white font-bold">AI Agents</span> to slash operational costs by up to 60%.
+                  <span className="text-white font-bold">Data Driven Decisions:</span> AI without data is hallucination. We teach you the <span className="text-white font-bold">Data Science & Analytics</span> foundation required to feed agents the right information.
                 </>
               }
             />
@@ -68,14 +69,14 @@ const WhyAgenticAI = () => {
               icon={<Bot className="w-8 h-8 text-emerald-400" />}
               text={
                 <>
-                  <span className="text-white font-bold">Service Arbitrage:</span> High-ticket clients no longer want "AI advice"—they pay <span className="text-white font-bold">premium rates for deployment</span> and managed agents.
+                  <span className="text-white font-bold">Career Arbitrage:</span> "Prompt Engineers" are being fired. <span className="text-white font-bold">Agentic Developers</span> are being hired at 30-50% salary premiums to build the enterprise workforce of tomorrow.
                 </>
               }
             />
 
           </div>
 
-          {/* Aceternity Shimmer CTA */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +86,7 @@ const WhyAgenticAI = () => {
             <button className="group relative inline-flex h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 shadow-[0_0_40px_-10px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-105">
               <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
               <span className="relative flex items-center gap-2 font-bold text-white text-lg md:text-xl">
-                Master Agentic AI Strategy
+                Start Your Transformation
                 <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
               </span>
             </button>
@@ -97,7 +98,7 @@ const WhyAgenticAI = () => {
   );
 };
 
-// Sub-component: Aceternity-style Spotlight Card
+// Sub-component: Spotlight Card
 const SpotlightCard = ({ icon, text, number, delay }) => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -138,7 +139,6 @@ const SpotlightCard = ({ icon, text, number, delay }) => {
       onMouseLeave={handleMouseLeave}
       className="relative flex flex-col items-start min-h-[260px] p-8 overflow-hidden bg-neutral-900 border border-neutral-800 rounded-2xl transition-all duration-300 hover:border-neutral-700 hover:shadow-2xl"
     >
-      {/* Spotlight Effect */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
@@ -146,22 +146,11 @@ const SpotlightCard = ({ icon, text, number, delay }) => {
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(16,185,129,0.1), transparent 40%)`,
         }}
       />
-
-      {/* Decorative Number Badge */}
-      <span className="absolute top-6 right-6 font-black text-4xl text-neutral-800/80 select-none">
-        {number}
-      </span>
-
-      {/* Icon */}
+      <span className="absolute top-6 right-6 font-black text-4xl text-neutral-800/80 select-none">{number}</span>
       <div className="relative z-10 mb-6 p-3 bg-neutral-800/50 rounded-xl border border-neutral-700/50 group-hover:bg-neutral-800 transition-colors duration-300">
         {icon}
       </div>
-
-      {/* Text */}
-      <p className="relative z-10 text-neutral-400 leading-relaxed text-base md:text-lg">
-        {text}
-      </p>
-
+      <p className="relative z-10 text-neutral-400 leading-relaxed text-base md:text-lg">{text}</p>
     </motion.div>
   );
 };

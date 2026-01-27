@@ -1,17 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldAlert, Bot, Zap, ChevronRight } from 'lucide-react';
+import { ShieldAlert, TrendingUp, Zap, ChevronRight } from 'lucide-react';
 
 const CareerWarningSection = () => {
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const itemVariants = {
@@ -22,10 +16,9 @@ const CareerWarningSection = () => {
   return (
     <div className="relative min-h-screen bg-neutral-950 py-20 px-4 md:px-8 font-sans flex flex-col items-center justify-center overflow-hidden">
       
-      {/* Background Effects - Emerald/Cyan palette for 2026 Tech vibe */}
+      {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 rounded-full blur-[100px] animate-pulse"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse"></div>
 
       <motion.div
         variants={containerVariants}
@@ -34,68 +27,61 @@ const CareerWarningSection = () => {
         viewport={{ once: true }}
         className="relative z-10 max-w-7xl mx-auto flex flex-col items-center"
       >
-        {/* Badge */}
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-emerald-500/20 bg-neutral-900 text-emerald-400 text-xs font-bold uppercase tracking-widest shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse" />
-            2026 Industry Shift
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-red-500/20 bg-neutral-900 text-red-400 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-red-500 mr-2 animate-pulse" />
+            Market Alert
           </span>
         </motion.div>
 
-        {/* Main Heading */}
         <motion.div variants={itemVariants} className="max-w-4xl mb-16 text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-tight">
-            The era of "Basic Prompting" is <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">over.</span>
+            Traditional degrees are <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">expiring assets.</span>
           </h2>
           <p className="text-lg md:text-2xl text-neutral-400 font-medium max-w-3xl mx-auto">
-            In 2026, the market isn't hiring prompt-engineers. They are hiring <span className="text-white">Agentic Architects</span> who can build autonomous business logic.
+            The job market has split. On one side: stagnation. On the other: <span className="text-white">Data Scientists & AI Architects</span> earning 3x the average salary. Which side are you on?
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
           
-          {/* Card 1: The Gap */}
           <AceternityCard 
-            icon={<ShieldAlert className="w-8 h-8 text-emerald-400" />}
-            title="The Execution Gap"
+            icon={<ShieldAlert className="w-8 h-8 text-red-400" />}
+            title="The Skills Gap"
+            glowColor="from-red-500/20 to-orange-500/20"
+          >
+            <p className="text-neutral-400 leading-relaxed">
+              Standard degrees don't teach the tools employers actually use. We bridge the gap with <span className="text-white font-semibold">Python, SQL, and Agentic AI</span> training.
+            </p>
+          </AceternityCard>
+
+          <AceternityCard 
+            icon={<TrendingUp className="w-8 h-8 text-emerald-400" />}
+            title="Explosive Demand"
             glowColor="from-emerald-500/20 to-teal-500/20"
           >
             <p className="text-neutral-400 leading-relaxed">
-              Companies are moving past basic chatbots. <span className="text-white font-semibold">40% of enterprise apps</span> now require task-specific agents. If you can't build them, you're becoming obsolete.
+              Data roles are projected to grow by <span className="text-white font-semibold">35% by 2028.</span> Companies are desperate for people who can turn data into decisions.
             </p>
           </AceternityCard>
 
-          {/* Card 2: Enterprise Demand */}
-          <AceternityCard 
-            icon={<Bot className="w-8 h-8 text-cyan-400" />}
-            title="Agentic ROI"
-            glowColor="from-cyan-500/20 to-blue-500/20"
-          >
-            <p className="text-neutral-400 leading-relaxed">
-              We've helped leaders <span className="text-white font-semibold">Enterprises</span> save $10M+ via Agentic workflows. This isn't a trend; it's the new gold standard for high-ticket consulting.
-            </p>
-          </AceternityCard>
-
-          {/* Card 3: The Pivot */}
           <AceternityCard 
             icon={<Zap className="w-8 h-8 text-yellow-400" />}
-            title="Architect Velocity"
+            title="Future Proofing"
             glowColor="from-yellow-500/20 to-orange-500/20"
           >
             <p className="text-neutral-400 leading-relaxed">
-              Transition from an "AI User" to a <span className="text-white font-semibold">Six-Figure Architect.</span> Learn the production-ready frameworks used by top agencies to deploy autonomous swarms.
+              AI isn't replacing Data Analysts; it's empowering them. Learn to use <span className="text-white font-semibold">AI as a superpower</span> to automate work and increase your value.
             </p>
           </AceternityCard>
 
         </div>
 
-        {/* CTA Button */}
         <motion.div variants={itemVariants}>
-          <button className="group relative inline-flex h-14 md:h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 font-black text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_-10px_rgba(16,185,129,0.7)] active:scale-95">
-            <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]"></span>
+          <button className="group relative inline-flex h-14 md:h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 font-black text-white transition-all duration-300 hover:scale-[1.03]">
             <span className="relative flex items-center gap-3 text-lg md:text-xl">
-              Master Agentic AI Architecture
+              Secure Your Career Today
               <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1.5" />
             </span>
           </button>
@@ -106,7 +92,6 @@ const CareerWarningSection = () => {
   );
 };
 
-// Reusable Aceternity-style Card Component
 const AceternityCard = ({ icon, title, children, glowColor }) => {
   return (
     <motion.div 
@@ -118,19 +103,12 @@ const AceternityCard = ({ icon, title, children, glowColor }) => {
       className="group relative h-full"
     >
       <div className={`absolute -inset-[1px] bg-gradient-to-r ${glowColor} rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
-      
       <div className="relative h-full bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 flex flex-col items-start shadow-xl transition-all duration-300 group-hover:border-emerald-500/30">
-        
         <div className="p-3 bg-neutral-950 border border-neutral-800 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
-        
-        <h3 className="text-white font-black text-xl mb-4 tracking-tight uppercase">
-          {title}
-        </h3>
-        <div className="text-sm md:text-base leading-relaxed font-medium">
-          {children}
-        </div>
+        <h3 className="text-white font-black text-xl mb-4 tracking-tight uppercase">{title}</h3>
+        <div className="text-sm md:text-base leading-relaxed font-medium">{children}</div>
       </div>
     </motion.div>
   );

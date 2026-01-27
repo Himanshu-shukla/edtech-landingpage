@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, MessageSquareQuote, Sparkles, Bot, Zap, ShieldCheck } from 'lucide-react';
+import { Star, ShieldCheck, Zap, Bot, Briefcase } from 'lucide-react';
 
 const TestimonialSection = () => {
   const testimonials = [
@@ -18,7 +18,7 @@ const TestimonialSection = () => {
       role: "SDE-2 → AI Solutions Architect",
       initials: "SJ",
       type: "Course Alumni",
-      text: "I was stuck in a standard dev role. This bootcamp taught me how to build autonomous agents, not just prompts. Three weeks after finishing, I landed a Senior AI Architect role with a 65% salary hike. The 'Agentic' framework is the future."
+      text: "I was stuck in a standard dev role. This bootcamp taught me how to build autonomous agents, not just prompts. Three weeks after finishing, I landed a Senior AI Architect role with a 65% salary hike."
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const TestimonialSection = () => {
       role: "Founder, e-Commerce Brand",
       initials: "VM",
       type: "Agency Client",
-      text: "Our customer support was drowning in emails. The team deployed a custom AI Email Bot that handles refunds and tracking with 95% accuracy. It feels like we hired 5 people overnight, but for a fraction of the cost."
+      text: "Our customer support was drowning. The team deployed a custom AI Email Bot that handles refunds and tracking with 95% accuracy. It feels like we hired 5 people overnight, but for a fraction of the cost."
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const TestimonialSection = () => {
       role: "Freelance Automation Expert",
       initials: "ER",
       type: "Course Alumni",
-      text: "I used to charge $50/hr for basic coding. Now I sell 'Workflow Transformation' packages starting at $5k using the Agentic AI stack I learned here. My clients are blown away by the ROI of autonomous agents."
+      text: "I used to charge $50/hr for basic coding. Now I sell 'Workflow Transformation' packages starting at $5k using the Agentic AI stack I learned here. My clients are blown away by the ROI."
     },
     {
       id: 5,
@@ -56,10 +56,7 @@ const TestimonialSection = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
@@ -68,16 +65,13 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
-      
+    <section id="reviews" className="relative py-24 px-4 bg-neutral-950 font-sans overflow-hidden">
       {/* Background Grid & Glows */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[100px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        
-        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +93,6 @@ const TestimonialSection = () => {
           </p>
         </motion.div>
 
-        {/* Masonry Layout Grid */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -114,52 +107,36 @@ const TestimonialSection = () => {
               whileHover={{ y: -5 }}
               className="break-inside-avoid relative bg-neutral-900/40 backdrop-blur-md rounded-2xl p-8 border border-neutral-800 shadow-xl flex flex-col gap-5 group transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.1)]"
             >
-              {/* Type Badge */}
-              <div className="absolute top-6 right-6 px-2 py-0.5 rounded bg-neutral-800 text-[10px] font-bold uppercase tracking-widest text-neutral-500 border border-neutral-700">
+              <div className={`absolute top-6 right-6 px-2 py-0.5 rounded bg-neutral-800 text-[10px] font-bold uppercase tracking-widest border border-neutral-700 ${review.type === "Agency Client" ? "text-cyan-400" : "text-emerald-400"}`}>
                 {review.type}
               </div>
 
-              {/* User Header */}
               <div className="flex items-center gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 p-[1px] shadow-lg">
                   <div className="w-full h-full bg-neutral-900 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {review.initials}
                   </div>
                 </div>
-                
                 <div>
-                  <h3 className="font-bold text-white text-lg leading-tight">
-                    {review.name}
-                  </h3>
-                  <p className="text-sm font-medium text-emerald-400/80">
-                    {review.role}
-                  </p>
+                  <h3 className="font-bold text-white text-lg leading-tight">{review.name}</h3>
+                  <p className="text-sm font-medium text-emerald-400/80">{review.role}</p>
                 </div>
               </div>
 
-              {/* Star Rating */}
               <div className="flex gap-1 relative z-10">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-emerald-400 text-emerald-400" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-emerald-400 text-emerald-400" />)}
               </div>
 
               <hr className="border-neutral-800/60" />
 
-              {/* Review Text */}
-              <div className="text-neutral-300 leading-relaxed text-sm md:text-base relative z-10 font-normal tracking-wide italic">
-                "{review.text}"
-              </div>
+              <div className="text-neutral-300 leading-relaxed text-sm md:text-base relative z-10 font-normal tracking-wide italic">"{review.text}"</div>
 
-              {/* Bottom Icon */}
               <div className="flex justify-end opacity-20 group-hover:opacity-100 transition-opacity">
-                {review.type === "Agency Client" ? <Bot className="w-5 h-5 text-emerald-400" /> : <Zap className="w-5 h-5 text-yellow-400" />}
+                {review.type === "Agency Client" ? <Bot className="w-5 h-5 text-cyan-400" /> : <Briefcase className="w-5 h-5 text-emerald-400" />}
               </div>
-
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
