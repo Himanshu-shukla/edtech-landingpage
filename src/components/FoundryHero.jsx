@@ -37,15 +37,26 @@ const FoundryHero = () => {
           </p>
         </motion.div>
 
-        {/* Dual CTA */}
+       {/* Dual CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 justify-center mb-20">
-          <button className="group relative h-16 px-10 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-black text-white transition-all shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] flex items-center justify-center gap-3">
+          
+          {/* Primary Button: Forced Emerald Background & White Text */}
+          <button 
+            className="group relative h-16 px-10 rounded-xl !bg-emerald-600 hover:!bg-emerald-500 font-black !text-white transition-all shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] flex items-center justify-center gap-3"
+            style={{ backgroundColor: '#059669', color: '#ffffff' }}
+          >
             Explore Career Tracks
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform !text-white" />
           </button>
-          <button className="h-16 px-10 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500/50 font-black text-white transition-all flex items-center justify-center gap-3">
+
+          {/* Secondary Button: Forced Dark Background & White Text */}
+          <button 
+            className="h-16 px-10 rounded-xl !bg-neutral-900 border !border-neutral-800 hover:!border-emerald-500/50 font-black !text-white transition-all flex items-center justify-center gap-3"
+            style={{ backgroundColor: '#171717', color: '#ffffff', borderColor: '#262626' }}
+          >
             Talk to an Advisor
           </button>
+          
         </div>
 
         {/* Brand/Tech Scroller (Optional Visual Flair) */}
