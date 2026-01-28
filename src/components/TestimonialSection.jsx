@@ -114,7 +114,7 @@ const TestimonialSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5 }}
-              className="break-inside-avoid bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm flex flex-col gap-5 hover:border-emerald-300 hover:shadow-xl"
+              className="relative break-inside-avoid bg-white rounded-2xl p-8 border border-neutral-200 shadow-sm flex flex-col gap-5 hover:border-emerald-300 hover:shadow-xl"
             >
               <div className="absolute top-6 right-6 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-emerald-50 border border-emerald-100 text-emerald-700">
                 {review.type}
