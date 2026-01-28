@@ -46,10 +46,10 @@ function App() {
 
 
         <WorkshopLanding />
-        <CareerWarningSection />
+        {/* <CareerWarningSection />
         <VideoShowcase />
         <WhyAgenticAI />
-        <CurriculumSection />
+        <CurriculumSection /> */}
         <BonusSection />
         <IrreplaceableSkillsSection />
         <FAQSection />
