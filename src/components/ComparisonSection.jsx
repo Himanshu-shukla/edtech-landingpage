@@ -1,9 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { XCircle, CheckCircle2, Sparkles, AlertTriangle, Scale, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XCircle, CheckCircle2, Sparkles, AlertTriangle, Scale, ArrowRight, X } from 'lucide-react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import RegistrationModal from './RegistrationModal';
 
+// --- Main Comparison Section ---
 const ComparisonSection = () => {
-  const whatsappLink = "https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20enroll%20in%20the%20bootcamp%20after%20seeing%20the%20comparison.";
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const comparisonData = [
     {
@@ -49,14 +53,11 @@ const ComparisonSection = () => {
   ];
 
   return (
-    // Reduced py-12/20 to py-10/16
-<section className="relative pb-12 md:pb-16 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
-
+    <section className="relative pb-12 md:pb-16 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
-      {/* Tightened max-w-5xl to max-w-4xl */}
-<div className="relative z-10 max-w-4xl mx-auto pt-0">
-          <motion.div 
+      <div className="relative z-10 max-w-4xl mx-auto pt-0">
+        <motion.div 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,10 +75,7 @@ const ComparisonSection = () => {
           </h2>
         </motion.div>
 
-        {/* Comparison Table: Reduced padding from p-10 to p-6/8 */}
         <div className="relative bg-white rounded-[1.5rem] border border-neutral-200 p-4 md:p-8 shadow-xl overflow-hidden mb-10">
-          
-          {/* Header row: Reduced mb-12 to mb-8 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mb-8">
             <div className="flex items-center justify-center gap-2 text-red-600 font-black text-[10px] md:text-xs uppercase tracking-[0.15em] p-2.5 bg-red-50/50 rounded-xl border border-red-100">
               <AlertTriangle className="w-4 h-4" />
@@ -89,7 +87,6 @@ const ComparisonSection = () => {
             </div>
           </div>
 
-          {/* Table Body: Reduced gap-6 to gap-3 */}
           <div className="flex flex-col gap-3">
             {comparisonData.map((row, index) => (
               <motion.div 
@@ -100,27 +97,20 @@ const ComparisonSection = () => {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 group"
               >
-                {/* Left Side: Reduced p-5 to p-4 */}
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-neutral-50/50 border border-neutral-100 transition-all duration-300">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-neutral-50/50 border border-neutral-100">
                   <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-neutral-500 text-xs md:text-sm leading-relaxed font-medium">
-                    {row.bad}
-                  </p>
+                  <p className="text-neutral-500 text-xs md:text-sm font-medium">{row.bad}</p>
                 </div>
 
-                {/* Right Side: Reduced p-5 to p-4 */}
-                <div className="relative flex items-start gap-3 p-4 rounded-xl bg-emerald-50/30 border border-emerald-100 transition-all duration-300 shadow-sm">
+                <div className="relative flex items-start gap-3 p-4 rounded-xl bg-emerald-50/30 border border-emerald-100 shadow-sm">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-neutral-800 text-xs md:text-sm leading-relaxed font-medium">
-                    {row.good}
-                  </p>
+                  <p className="text-neutral-800 text-xs md:text-sm font-medium">{row.good}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* CTA Section: Tightened spacing */}
         <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,24 +121,26 @@ const ComparisonSection = () => {
                 Secure your career today
             </h3>
             
-            <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full max-w-md relative z-10 group">
-                <motion.button
-                    whileHover={{ scale: 1.01, y: -2 }}
-                    whileTap={{ scale: 0.99 }}
-                    className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-lg font-black py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 overflow-hidden border-t border-green-300/30"
-                >
-                    <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                        initial={{ x: '-100%' }}
-                        whileHover={{ x: '100%' }}
-                        transition={{ duration: 0.5 }}
-                    />
-                    <span className="relative z-10">Enroll Now</span>
-                    <ArrowRight className="relative z-10 w-5 h-5" />
-                </motion.button>
-            </a>
+            <motion.button
+                onClick={() => setIsModalOpen(true)}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative w-full max-w-md bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-lg font-black py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 overflow-hidden border-t border-green-300/30 cursor-pointer"
+            >
+                <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.5 }}
+                />
+                <span className="relative z-10">Enroll Now</span>
+                <ArrowRight className="relative z-10 w-5 h-5" />
+            </motion.button>
         </motion.div>
       </div>
+
+      {/* SDE-3 Modal Logic */}
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

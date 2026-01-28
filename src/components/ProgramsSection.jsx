@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutTemplate,
   Code,
@@ -10,12 +10,17 @@ import {
   Zap,
   Network,
   Clock,
-  CheckCircle2
+  CheckCircle2,
+  X
 } from 'lucide-react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import RegistrationModal from './RegistrationModal';
 
+
+// --- Main Programs Section ---
 const ProgramsSection = () => {
-  const whatsappLink =
-    "https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20register%20for%20the%20bootcamp%20for%20%C2%A399.";
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const curriculum = [
     {
@@ -75,33 +80,22 @@ const ProgramsSection = () => {
   ];
 
   return (
-    <section
-      id="curriculum"
-      className="relative pb-14 md:pb-16 px-4 bg-white font-sans overflow-hidden"
-    >
-      {/* Grid Background */}
+    <section id="curriculum" className="relative pb-14 md:pb-16 px-4 bg-white font-sans overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 pt-8 md:pt-10">
-
-        {/* Header */}
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-3xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
-            The 16-Hour{" "}
-            <span className="text-emerald-600">Implementation Roadmap</span>
+            The 16-Hour <span className="text-emerald-600">Implementation Roadmap</span>
           </h2>
           <p className="text-neutral-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Follow a step-by-step path from AI beginner to automation architect.
-            No theory — only{" "}
-            <span className="text-neutral-900 font-bold">execution</span>.
+            Follow a step-by-step path from AI beginner to automation architect. No theory — only <span className="text-neutral-900 font-bold">execution</span>.
           </p>
         </div>
 
-        {/* Journey */}
         <div className="space-y-10">
           {curriculum.map((day, dIndex) => (
             <div key={dIndex}>
-              {/* Timeline */}
               <div className="flex items-center gap-4 mb-5">
                 <div className="bg-emerald-600 text-white px-4 py-1.5 rounded-full font-black text-xs tracking-widest shadow-sm">
                   {day.day}
@@ -113,31 +107,19 @@ const ProgramsSection = () => {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-2xl md:text-3xl font-black text-neutral-900">
-                  {day.theme}
-                </h3>
-                <p className="text-neutral-500 text-sm mt-1">
-                  {day.subtext}
-                </p>
+                <h3 className="text-2xl md:text-3xl font-black text-neutral-900">{day.theme}</h3>
+                <p className="text-neutral-500 text-sm mt-1">{day.subtext}</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {day.modules.map((mod, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ y: -4 }}
-                    className="flex gap-4 p-5 bg-white rounded-2xl border border-neutral-200 hover:border-emerald-200 hover:shadow-xl transition-all"
-                  >
-                    <div className="p-3 bg-neutral-50 rounded-xl border border-neutral-100">
+                  <motion.div key={i} whileHover={{ y: -4 }} className="flex gap-4 p-5 bg-white rounded-2xl border border-neutral-200 hover:border-emerald-200 hover:shadow-xl transition-all group">
+                    <div className="p-3 bg-neutral-50 rounded-xl border border-neutral-100 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-colors">
                       {mod.icon}
                     </div>
                     <div>
-                      <h4 className="font-bold text-neutral-900 mb-1">
-                        {mod.title}
-                      </h4>
-                      <p className="text-neutral-500 text-xs leading-relaxed font-medium">
-                        {mod.desc}
-                      </p>
+                      <h4 className="font-bold text-neutral-900 mb-1">{mod.title}</h4>
+                      <p className="text-neutral-500 text-xs leading-relaxed font-medium">{mod.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -146,13 +128,7 @@ const ProgramsSection = () => {
           ))}
         </div>
 
-        {/* Outcome */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 p-7 bg-neutral-900 rounded-[2.5rem] text-center relative overflow-hidden"
-        >
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 p-7 bg-neutral-900 rounded-[2.5rem] text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 blur-3xl rounded-full" />
           <p className="text-white text-base md:text-lg font-bold flex items-center justify-center gap-3 relative z-10">
             <CheckCircle2 className="w-6 h-6 text-emerald-400" />
@@ -160,28 +136,36 @@ const ProgramsSection = () => {
           </p>
         </motion.div>
 
-        {/* CTA */}
-        <div className="mt-6 md:mt-8 flex flex-col items-center">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="w-full max-w-sm"
-          >
+        {/* Updated CTA to open Modal */}
+        <div className="mt-6 md:mt-10 flex flex-col items-center">
             <motion.button
+              onClick={() => setIsModalOpen(true)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-emerald-600 text-white py-4 px-8 rounded-2xl font-black text-lg shadow-lg hover:bg-emerald-700 transition-all"
+              className="w-full max-w-lg bg-gradient-to-b from-[#00d647] to-[#009933] text-white py-6 px-8 rounded-3xl font-black text-xl md:text-2xl shadow-[0_10px_0_rgb(0,100,30)] transition-all cursor-pointer overflow-hidden relative"
             >
-              Join the Batch — £99
-              <div className="text-[10px] text-emerald-100 font-bold uppercase tracking-widest mt-1">
-                Limited: 15 Seats Remaining
+              {/* Shimmer Effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.5 }}
+              />
+              
+              <div className="flex items-center justify-center gap-3">
+                <span>Join the Batch — £99</span>
+                <span className="text-green-900 line-through decoration-red-600 decoration-2 opacity-60 text-base">£299</span>
+              </div>
+              
+              <div className="text-[10px] md:text-xs text-emerald-100 font-bold uppercase tracking-widest mt-1 opacity-80">
+                Limited: 15 Seats Remaining • Secure Registration
               </div>
             </motion.button>
-          </a>
         </div>
-
       </div>
+
+      {/* Modal Logic */}
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };
