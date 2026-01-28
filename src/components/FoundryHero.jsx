@@ -171,7 +171,7 @@ const FoundryHero = () => {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">
             Agentic AI Workflows
           </span>{" "}
-          In Just 6 Months
+          In Just 2 Days
         </motion.h2>
 
         {/* Sub Description */}
