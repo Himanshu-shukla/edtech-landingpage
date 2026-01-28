@@ -32,7 +32,7 @@ const FAQSection = () => {
       id: 5,
       question: "Do you offer placement support?",
       icon: <Sparkles className="w-5 h-5" />,
-      answer: "Yes! We provide a 100% Placement Guarantee for eligible learners. This includes job-ready training, resume & LinkedIn optimization, mock interviews, and continuous job opportunities until you secure a position."
+      answer: "Yes! We provide a 100% Placement Support for eligible learners. This includes job-ready training, resume & LinkedIn optimization, mock interviews, and continuous job opportunities until you secure a position."
     },
     {
       id: 6,
@@ -45,14 +45,14 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    // 1. INLINE STYLE: Forces black background immediately, overriding any CSS file
+    // Background changed to neutral-50 for a clean light aesthetic
     <section 
-      className="relative py-12 md:py-24 px-4 !bg-neutral-950 font-sans overflow-hidden"
-      style={{ backgroundColor: '#0a0a0a', color: '#ffffff' }}
+      className="relative py-12 md:py-24 px-4 bg-neutral-50 font-sans overflow-hidden"
+      style={{ backgroundColor: '#f9fafb', color: '#171717' }}
     >
       
-      {/* Green Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-emerald-500/10 blur-[100px] pointer-events-none rounded-full" />
+      {/* Soft Emerald Ambient Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-emerald-500/5 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="relative z-10 max-w-3xl mx-auto">
         
@@ -63,15 +63,14 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-400 text-sm font-bold tracking-widest uppercase mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm">
             <Sparkles className="w-4 h-4" />
             <span>Admissions & Support</span>
           </div>
-          {/* Forced White Text */}
-          <h2 className="text-4xl md:text-5xl font-extrabold !text-white mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
             Common Questions
           </h2>
-          <p className="!text-neutral-400 text-lg font-medium">
+          <p className="text-neutral-500 text-lg font-medium">
             Everything you need to know about joining EdTech Informative.
           </p>
         </motion.div>
@@ -87,30 +86,28 @@ const FAQSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                // 2. CARD STYLING: Force dark backgrounds on both normal and hover states
+                // Switched to white cards with subtle borders and shadows
                 className={`group border rounded-2xl transition-all duration-300 overflow-hidden ${
                   isOpen 
-                    ? '!bg-neutral-900 border-emerald-500 shadow-[0_0_25px_-5px_rgba(16,185,129,0.3)]' 
-                    : '!bg-neutral-900/40 border-neutral-800 hover:!bg-neutral-900 hover:border-emerald-500/50'
+                    ? 'bg-white border-emerald-500 shadow-xl' 
+                    : 'bg-white border-neutral-200 hover:border-emerald-300 shadow-sm'
                 }`}
-                style={{ backgroundColor: isOpen ? '#171717' : 'rgba(23, 23, 23, 0.4)' }}
               >
                 <button 
                   onClick={() => setOpenIndex(isOpen ? -1 : index)} 
                   className="w-full flex items-center justify-between p-6 text-left cursor-pointer bg-transparent"
                 >
                   <div className="flex items-center gap-4">
-                    {/* Icon */}
-                    <div className={`transition-colors duration-300 ${isOpen ? 'text-emerald-400' : 'text-emerald-600 group-hover:text-emerald-400'}`}>
+                    {/* Icon - Deepened color for light mode */}
+                    <div className={`transition-colors duration-300 ${isOpen ? 'text-emerald-600' : 'text-neutral-400 group-hover:text-emerald-500'}`}>
                       {item.icon}
                     </div>
                     
-                    {/* Question Text: FORCED WHITE via inline style and class */}
+                    {/* Question Text */}
                     <span 
                       className={`font-bold text-lg md:text-xl transition-colors duration-300 ${
-                        isOpen ? '!text-white' : '!text-neutral-300 group-hover:!text-white'
+                        isOpen ? 'text-neutral-900' : 'text-neutral-700 group-hover:text-neutral-900'
                       }`}
-                      style={{ color: isOpen ? '#fff' : '#d4d4d4' }}
                     >
                       {item.question}
                     </span>
@@ -120,7 +117,7 @@ const FAQSection = () => {
                   <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
                     isOpen 
                       ? 'bg-emerald-600 text-white border-emerald-500 rotate-180' 
-                      : 'bg-neutral-800 border-neutral-700 text-neutral-400 group-hover:border-emerald-500/50 group-hover:text-emerald-400'
+                      : 'bg-neutral-50 border-neutral-200 text-neutral-400 group-hover:bg-emerald-50 group-hover:border-emerald-500/50 group-hover:text-emerald-600'
                   }`}>
                     {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                   </div>
@@ -135,9 +132,8 @@ const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }} 
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      {/* Answer Text: Forced Light Gray */}
-                      <div className="px-6 pb-6 !text-neutral-300 leading-relaxed text-base font-medium">
-                        <div className="pt-4 border-t border-neutral-800/50">
+                      <div className="px-6 pb-6 text-neutral-600 leading-relaxed text-base font-medium">
+                        <div className="pt-4 border-t border-neutral-100">
                           {item.answer}
                         </div>
                       </div>

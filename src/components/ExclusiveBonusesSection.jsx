@@ -11,43 +11,43 @@ const ExclusiveBonusesSection = () => {
             id: 1,
             title: "BONUS 1",
             description: "Roadmap to Becoming a 10X Data Analyst",
-            icon: <Map className="w-16 h-16 text-cyan-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(34,211,238,0.3)]",
+            icon: <Map className="w-16 h-16 text-cyan-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-cyan-100",
         },
         {
             id: 2,
             title: "BONUS 2",
             description: "E-books on essential Data Science topics",
-            icon: <BookOpen className="w-16 h-16 text-purple-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]",
+            icon: <BookOpen className="w-16 h-16 text-purple-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-purple-100",
         },
         {
             id: 3,
             title: "BONUS 3",
             description: "Data Privacy & Security Checklist",
-            icon: <ShieldCheck className="w-16 h-16 text-emerald-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)]",
+            icon: <ShieldCheck className="w-16 h-16 text-emerald-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-emerald-100",
         },
         {
             id: 4,
             title: "BONUS 4",
             description: "Networking & Collaboration Guide",
-            icon: <Users className="w-16 h-16 text-yellow-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(250,204,21,0.3)]",
+            icon: <Users className="w-16 h-16 text-amber-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-amber-100",
         },
         {
             id: 5,
             title: "BONUS 5",
             description: "Step-by-step Project Portfolio Guides",
-            icon: <Briefcase className="w-16 h-16 text-pink-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(244,114,182,0.3)]",
+            icon: <Briefcase className="w-16 h-16 text-pink-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-pink-100",
         },
         {
             id: 6,
             title: "BONUS 6",
             description: "Free Bootcamp Attendance Certificate",
-            icon: <Award className="w-16 h-16 text-orange-400" strokeWidth={1.5} />,
-            glow: "shadow-[0_0_30px_-5px_rgba(251,146,60,0.3)]",
+            icon: <Award className="w-16 h-16 text-orange-600" strokeWidth={1.5} />,
+            glow: "hover:shadow-orange-100",
         },
     ];
 
@@ -65,14 +65,14 @@ const ExclusiveBonusesSection = () => {
     };
 
     return (
-        <section className="relative py-20 px-4 font-sans overflow-hidden bg-neutral-950 border-t border-neutral-900">
+        <section className="relative py-20 px-4 font-sans overflow-hidden bg-white border-t border-neutral-100">
 
             {/* Background Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
-            {/* Background Glows */}
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
+            {/* Background Glows - Adjusted for Light Mode */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-100/40 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/40 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Header */}
@@ -82,18 +82,18 @@ const ExclusiveBonusesSection = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-black uppercase tracking-widest mb-6 animate-pulse">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-black uppercase tracking-widest mb-6 animate-pulse">
                         <Gift className="w-3.5 h-3.5" />
                         Limited Time Offer
                     </div>
 
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    <h2 className="text-4xl md:text-6xl font-black text-neutral-900 mb-6 leading-tight">
                         Get Exclusive Bonuses <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                             (Worth $2,500)
                         </span>
                     </h2>
-                    <p className="text-neutral-400 text-lg md:text-xl font-medium">
+                    <p className="text-neutral-500 text-lg md:text-xl font-medium">
                         Available only for Live Bootcamp Attendees.
                     </p>
                 </motion.div>
@@ -111,19 +111,17 @@ const ExclusiveBonusesSection = () => {
                             key={bonus.id}
                             variants={itemVariants}
                             whileHover={{ y: -5 }}
-                            className={`relative bg-neutral-900/60 backdrop-blur-xl rounded-3xl p-8 md:p-10 flex flex-col items-center text-center border border-neutral-800 hover:border-neutral-700 transition-all duration-300 group ${bonus.glow}`}
+                            className={`relative bg-white rounded-3xl p-8 md:p-10 flex flex-col items-center text-center border border-neutral-200 hover:border-neutral-300 transition-all duration-300 group shadow-sm hover:shadow-2xl ${bonus.glow}`}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-
-                            <h4 className="text-neutral-500 font-black text-sm uppercase tracking-[0.2em] mb-8 group-hover:text-white transition-colors">
+                            <h4 className="text-neutral-400 font-black text-sm uppercase tracking-[0.2em] mb-8 group-hover:text-neutral-900 transition-colors">
                                 {bonus.title}
                             </h4>
 
-                            <div className="mb-8 p-6 rounded-full bg-neutral-950 border border-neutral-800 group-hover:scale-110 transition-transform duration-500 shadow-2xl relative z-10">
+                            <div className="mb-8 p-6 rounded-full bg-neutral-50 border border-neutral-100 group-hover:scale-110 transition-transform duration-500 shadow-sm relative z-10">
                                 {bonus.icon}
                             </div>
 
-                            <p className="text-white font-bold text-lg md:text-xl leading-snug relative z-10">
+                            <p className="text-neutral-800 font-bold text-lg md:text-xl leading-snug relative z-10">
                                 {bonus.description}
                             </p>
                         </motion.div>
@@ -138,18 +136,15 @@ const ExclusiveBonusesSection = () => {
                     className="flex flex-col items-center relative py-8"
                 >
                     {/* Ambient Glow for Visibility */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
-
-
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-emerald-50 blur-[80px] rounded-full pointer-events-none" />
 
                     {/* Main Interactive Button */}
                     <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full max-w-3xl relative z-10 group">
                         <motion.button
                             whileHover={{ scale: 1.02, y: -4 }}
                             whileTap={{ scale: 0.98, y: 6, boxShadow: "none" }}
-                            className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-xl md:text-3xl font-black py-8 px-6 rounded-3xl shadow-[0_12px_0_rgb(0,100,30),0_20px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_0_rgb(0,100,30),0_30px_60px_rgba(0,255,100,0.25)] transition-all flex flex-col md:flex-row items-center justify-center gap-3 overflow-hidden border-t border-green-300/30"
+                            className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-xl md:text-3xl font-black py-8 px-6 rounded-3xl shadow-[0_12px_0_rgb(0,100,30),0_20px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_0_rgb(0,100,30),0_30px_60px_rgba(0,255,100,0.15)] transition-all flex flex-col md:flex-row items-center justify-center gap-3 overflow-hidden border-t border-green-300/30"
                         >
-                            {/* Shine Effect on Hover */}
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
                                 initial={{ x: '-100%' }}
@@ -176,19 +171,17 @@ const ExclusiveBonusesSection = () => {
                                     transition={{ delay: i * 0.03, type: "spring" }}
                                     viewport={{ once: true }}
                                     className={`flex-1 rounded-full ${i < 17
-                                        ? 'bg-gradient-to-t from-red-700 to-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]'
-                                        : 'bg-neutral-800'
+                                        ? 'bg-gradient-to-t from-red-600 to-red-500 shadow-sm'
+                                        : 'bg-neutral-200'
                                         }`}
                                 />
                             ))}
                         </div>
-                        <p className="text-red-400 text-center font-bold text-xs md:text-sm mt-4 uppercase tracking-widest animate-pulse">
+                        <p className="text-red-600 text-center font-bold text-xs md:text-sm mt-4 uppercase tracking-widest animate-pulse">
                             🔥 High Demand: Batch filling fast
                         </p>
                     </div>
-
                 </motion.div>
-
             </div>
         </section>
     );

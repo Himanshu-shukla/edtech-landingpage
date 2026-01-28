@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldAlert, TrendingUp, Zap, ChevronRight, Clock } from 'lucide-react';
+import { ShieldAlert, TrendingUp, ChevronRight, Clock } from 'lucide-react';
 
 const CareerWarningSection = () => {
   const containerVariants = {
@@ -14,10 +14,10 @@ const CareerWarningSection = () => {
   };
 
   return (
-    <div className="relative py-12 md:py-20 bg-neutral-950 px-4 md:px-8 font-sans flex flex-col items-center justify-center overflow-hidden">      
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 rounded-full blur-[100px] animate-pulse"></div>
+    <div className="relative py-12 md:py-20 bg-white px-4 md:px-8 font-sans flex flex-col items-center justify-center overflow-hidden border-t border-neutral-100">      
+      {/* Background Effects - Adjusted for Light Mode */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-100/50 rounded-full blur-[100px] animate-pulse"></div>
 
       <motion.div
         variants={containerVariants}
@@ -27,51 +27,51 @@ const CareerWarningSection = () => {
         className="relative z-10 max-w-7xl mx-auto flex flex-col items-center"
       >
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-red-500/20 bg-neutral-900 text-red-400 text-xs font-bold uppercase tracking-widest shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-red-500 mr-2 animate-pulse" />
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-red-200 bg-red-50 text-red-600 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-red-600 mr-2 animate-pulse" />
             Reality Check
           </span>
         </motion.div>
 
         <motion.div variants={itemVariants} className="max-w-4xl mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-neutral-900 mb-6 leading-tight">
             The "AI User" Era is Over. <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">Become an Architect.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">Become an Architect.</span>
           </h2>
-          <p className="text-lg md:text-2xl text-neutral-400 font-medium max-w-3xl mx-auto">
-            Using ChatGPT makes you average. Building Agents that replace manual work makes you <span className="text-white">irreplaceable and highly paid.</span>
+          <p className="text-lg md:text-2xl text-neutral-600 font-medium max-w-3xl mx-auto">
+            Using ChatGPT makes you average. Building Agents that replace manual work makes you <span className="text-neutral-900 font-bold">irreplaceable and highly paid.</span>
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
           
           <AceternityCard 
-            icon={<ShieldAlert className="w-8 h-8 text-red-400" />}
+            icon={<ShieldAlert className="w-8 h-8 text-red-600" />}
             title="The ₹99 Webinar Trap"
-            glowColor="from-red-500/20 to-orange-500/20"
+            glowColor="from-red-200 to-orange-200"
           >
-            <p className="text-neutral-400 leading-relaxed">
-              Most webinars are just 2-hour upsell pitches with zero actionable skills. We break the cycle by making you <span className="text-white font-semibold">build & deploy live agents</span> in class.
+            <p className="text-neutral-600 leading-relaxed">
+              Most webinars are just 2-hour upsell pitches with zero actionable skills. We break the cycle by making you <span className="text-neutral-900 font-bold">build & deploy live agents</span> in class.
             </p>
           </AceternityCard>
 
           <AceternityCard 
-            icon={<Clock className="w-8 h-8 text-emerald-400" />}
+            icon={<Clock className="w-8 h-8 text-emerald-600" />}
             title="Drowning in Manual Ops"
-            glowColor="from-emerald-500/20 to-teal-500/20"
+            glowColor="from-emerald-200 to-teal-200"
           >
-            <p className="text-neutral-400 leading-relaxed">
-              Stop spending 40+ hours/week on repetitive emails, data entry, and social posts. Build agents that reliably <span className="text-white font-semibold">save you 30 hours/week</span> immediately.
+            <p className="text-neutral-600 leading-relaxed">
+              Stop spending 40+ hours/week on repetitive emails, data entry, and social posts. Build agents that reliably <span className="text-neutral-900 font-bold">save you 30 hours/week</span> immediately.
             </p>
           </AceternityCard>
 
           <AceternityCard 
-            icon={<TrendingUp className="w-8 h-8 text-yellow-400" />}
+            icon={<TrendingUp className="w-8 h-8 text-amber-600" />}
             title="No Monetization Plan"
-            glowColor="from-yellow-500/20 to-orange-500/20"
+            glowColor="from-amber-200 to-orange-200"
           >
-            <p className="text-neutral-400 leading-relaxed">
-              Knowing AI isn't enough; selling it is key. We give you the exact <span className="text-white font-semibold">Agency Blueprint</span> to package and sell automation services for ₹50k - ₹2L.
+            <p className="text-neutral-600 leading-relaxed">
+              Knowing AI isn't enough; selling it is key. We give you the exact <span className="text-neutral-900 font-bold">Agency Blueprint</span> to package and sell automation services for ₹50k - ₹2L.
             </p>
           </AceternityCard>
 
@@ -79,7 +79,7 @@ const CareerWarningSection = () => {
 
         <motion.div variants={itemVariants}>
           <a href="https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20secure%20my%20career%20with%20Agentic%20AI." target="_blank" rel="noreferrer">
-            <button className="group relative inline-flex h-14 md:h-16 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-10 font-black text-white transition-all duration-300 hover:scale-[1.03]">
+            <button className="group relative inline-flex h-14 md:h-16 items-center justify-center overflow-hidden rounded-xl bg-emerald-600 px-10 font-black text-white transition-all duration-300 hover:scale-[1.03] hover:bg-emerald-700 shadow-lg shadow-emerald-200">
               <span className="relative flex items-center gap-3 text-lg md:text-xl">
                 Secure Your Career Today
                 <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1.5" />
@@ -103,13 +103,16 @@ const AceternityCard = ({ icon, title, children, glowColor }) => {
       whileHover={{ y: -5 }}
       className="group relative h-full"
     >
-      <div className={`absolute -inset-[1px] bg-gradient-to-r ${glowColor} rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
-      <div className="relative h-full bg-neutral-900/50 backdrop-blur-sm border border-neutral-800 rounded-2xl p-8 flex flex-col items-start shadow-xl transition-all duration-300 group-hover:border-emerald-500/30">
-        <div className="p-3 bg-neutral-950 border border-neutral-800 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+      {/* Outer Glow Effect */}
+      <div className={`absolute -inset-[1px] bg-gradient-to-r ${glowColor} rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
+      
+      {/* Card Content */}
+      <div className="relative h-full bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col items-start shadow-sm transition-all duration-300 group-hover:border-emerald-300 group-hover:shadow-xl">
+        <div className="p-3 bg-neutral-50 border border-neutral-100 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
-        <h3 className="text-white font-black text-xl mb-4 tracking-tight uppercase">{title}</h3>
-        <div className="text-sm md:text-base leading-relaxed font-medium">{children}</div>
+        <h3 className="text-neutral-900 font-black text-xl mb-4 tracking-tight uppercase">{title}</h3>
+        <div className="text-sm md:text-base leading-relaxed font-medium text-neutral-600">{children}</div>
       </div>
     </motion.div>
   );
