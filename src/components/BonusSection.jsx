@@ -57,7 +57,7 @@ const BonusSection = () => {
   };
 
   return (
-    <section className="relative py-12 md:py-20 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
+<section className="relative pt-4 pb-12 md:pb-20 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
       {/* Light Blueprint Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
@@ -68,7 +68,7 @@ const BonusSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-bold uppercase tracking-widest mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-bold uppercase tracking-widest mb-4 shadow-sm">
             <Gift className="w-4 h-4" />
             <span>Total Value: ₹42,000+</span>
           </div>

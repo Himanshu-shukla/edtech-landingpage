@@ -62,7 +62,10 @@ const ExclusiveBonusesSection = () => {
   };
 
   return (
-    <section className="relative py-20 px-4 font-sans overflow-hidden bg-white border-t border-neutral-100">
+    <section
+  id="reviews"
+  className="relative pb-8 md:pb-6 px-4 bg-white font-sans overflow-hidden"
+>
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
@@ -76,7 +79,7 @@ const ExclusiveBonusesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-black uppercase tracking-widest mb-6 animate-pulse">
             <Gift className="w-3.5 h-3.5" />
@@ -101,7 +104,7 @@ const ExclusiveBonusesSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8"
         >
           {bonuses.map((bonus) => (
             <motion.div
@@ -110,12 +113,12 @@ const ExclusiveBonusesSection = () => {
               whileHover={{ y: -5 }}
               className={`relative bg-white rounded-3xl p-8 md:p-10 flex flex-col items-center text-center border border-neutral-200 hover:border-neutral-300 transition-all duration-300 group shadow-sm hover:shadow-2xl ${bonus.glow}`}
             >
-              <h4 className="text-neutral-400 font-black text-sm uppercase tracking-[0.2em] mb-8 group-hover:text-neutral-900 transition-colors">
+              <h4 className="text-neutral-400 font-black text-sm uppercase tracking-[0.2em] mb-4 group-hover:text-neutral-900 transition-colors">
                 {bonus.title}
               </h4>
 
               {/* IMAGE ICON */}
-              <div className="mb-8 p-6 rounded-full bg-neutral-50 border border-neutral-100 group-hover:scale-110 transition-transform duration-500 shadow-sm">
+              <div className="mb-4 p-6 rounded-full bg-neutral-50 border border-neutral-100 group-hover:scale-110 transition-transform duration-500 shadow-sm">
                 <img
                   src={bonus.img}
                   alt={bonus.description}

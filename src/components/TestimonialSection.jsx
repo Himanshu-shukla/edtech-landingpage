@@ -84,7 +84,10 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section id="reviews" className="relative py-12 md:py-24 px-4 bg-white font-sans overflow-hidden">
+    <section
+  id="reviews"
+  className="relative pb-16 md:pb-20 px-4 bg-white font-sans overflow-hidden"
+>
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -92,9 +95,9 @@ const TestimonialSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 max-w-4xl mx-auto"
+          className="text-center mb-2 max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold mb-8">
+          <div className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold mb-4">
             <ShieldCheck className="w-5 h-5" />
             <span>Verified UK Participant Feedback</span>
           </div>

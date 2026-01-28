@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Globe, Building2 } from 'lucide-react';
 
 const AlumniSection = () => {
-  // Updated logo list (exact URLs provided by you)
   const row1 = [
     { name: "Barclays", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Barclays-Logo.svg" },
     { name: "Tesco", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Tesco_logo.png" },
@@ -25,7 +24,15 @@ const AlumniSection = () => {
   ];
 
   return (
-    <section className="relative py-10 md:py-14 bg-white font-sans overflow-hidden border-t border-neutral-100">
+    <section
+  id="reviews"
+  className="relative pb-16 md:pb-20 px-4 bg-white font-sans overflow-hidden"
+>
+
+      
+      {/* Engineering Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
 
         {/* Header */}
@@ -35,7 +42,7 @@ const AlumniSection = () => {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[10px] font-black tracking-widest uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[10px] font-black tracking-widest uppercase mb-4 shadow-sm">
             <Building2 className="w-3 h-3" />
             <span>Global Corporate Network</span>
           </div>
@@ -80,9 +87,6 @@ const AlumniSection = () => {
   );
 };
 
-/* ------------------------------------------------------------------ */
-/* Marquee Row                                                        */
-/* ------------------------------------------------------------------ */
 const MarqueeRow = ({ items, direction, speed }) => {
   return (
     <div className="flex w-full overflow-hidden select-none">
@@ -104,15 +108,7 @@ const MarqueeRow = ({ items, direction, speed }) => {
             <img
               src={brand.logo}
               alt={brand.name}
-              className="
-    h-10 md:h-14
-    max-w-[140px] md:max-w-[180px]
-    object-contain
-    opacity-100
-    filter-none
-    transition-transform duration-300
-    hover:scale-105
-  "
+              className="h-10 md:h-14 max-w-[140px] md:max-w-[180px] object-contain transition-transform duration-300 hover:scale-105"
               loading="lazy"
             />
           </div>

@@ -26,7 +26,7 @@ const IrreplaceableSkillsSection = () => {
 
   return (
     // Background changed to neutral-50 for a clean light look
-    <section className="relative py-24 px-4 bg-neutral-50 font-sans overflow-hidden border-t border-neutral-100">
+<section className="relative pt-6 pb-24 px-4 bg-neutral-50 font-sans overflow-hidden border-t border-neutral-100">
       
       {/* Light Mode Grid Effect */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
@@ -39,7 +39,7 @@ const IrreplaceableSkillsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
           {/* Badge: Soft emerald background with dark green text */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 text-sm font-bold mb-6 shadow-sm">

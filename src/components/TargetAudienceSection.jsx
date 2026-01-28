@@ -76,13 +76,14 @@ const TargetAudienceSection = () => {
   };
 
   return (
-    <section className="relative w-full py-16 md:py-28 px-4 md:px-8 bg-white overflow-x-hidden font-sans border-t border-neutral-100">
-      {/* Background Decor - Subtle light mode accents */}
+<section className="relative w-full pb-16 md:pb-20 px-4 md:px-8 bg-white overflow-x-hidden font-sans border-t border-neutral-100">
+
+    {/* Background Decor - Subtle light mode accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50 blur-[100px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 blur-[100px] pointer-events-none rounded-full" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+<div className="relative z-10 max-w-7xl mx-auto pt-0">
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Left Column */}
@@ -92,7 +93,7 @@ const TargetAudienceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-bold mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-bold mb-4">
                 <Bot className="w-4 h-4" />
                 <span>WHO IS THIS FOR?</span>
               </div>

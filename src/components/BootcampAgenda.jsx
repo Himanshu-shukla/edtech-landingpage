@@ -7,11 +7,11 @@ const BootcampAgenda = () => {
     const whatsappLink = "https://wa.me/919810249170?text=Hi%2C%20I%20want%20to%20register%20for%20the%20bootcamp%20for%20%C2%A399.";
 
     return (
-        <section className="relative py-12 px-4 bg-neutral-50 font-sans overflow-hidden">
-            <div className="max-w-6xl mx-auto">
+        <section className="relative pb-8 md:pb-12 px-4 bg-neutral-50">
+            <div className="max-w-6xl mx-auto pt-6">
 
                 {/* Grid Container: Instructor vs Agenda */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
 
                     {/* LEFT: Instructor & Logistics */}
                     <motion.div
@@ -119,14 +119,19 @@ const BootcampAgenda = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col items-center relative py-8"
+                    className="flex flex-col items-center relative py-4 md:py-6"
                 >
-                    {/* Main Interactive Button */}
-                    <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full max-w-3xl relative z-10 group">
+                    {/* Main CTA Button */}
+                    <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full max-w-3xl relative z-10 group"
+                    >
                         <motion.button
                             whileHover={{ scale: 1.02, y: -4 }}
                             whileTap={{ scale: 0.98, y: 6, boxShadow: "none" }}
-                            className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-xl md:text-3xl font-black py-8 px-6 rounded-3xl shadow-[0_12px_0_rgb(0,100,30),0_20px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_16px_0_rgb(0,100,30),0_30px_60px_rgba(0,255,100,0.2)] transition-all flex flex-col md:flex-row items-center justify-center gap-3 overflow-hidden border-t border-green-300/30"
+                            className="relative w-full bg-gradient-to-b from-[#00d647] to-[#009933] text-white text-xl md:text-3xl font-black py-6 md:py-7 px-6 rounded-3xl shadow-[0_12px_0_rgb(0,100,30),0_20px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_16px_0_rgb(0,100,30),0_30px_60px_rgba(0,255,100,0.2)] transition-all flex flex-col md:flex-row items-center justify-center overflow-hidden border-t border-green-300/30"
                         >
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
@@ -136,15 +141,17 @@ const BootcampAgenda = () => {
                             />
 
                             <span className="relative z-10 drop-shadow-md">Register For £99</span>
-                            <span className="relative z-10 text-green-900 line-through decoration-red-600 decoration-4 opacity-70 text-2xl mx-2">£299</span>
+                            <span className="relative z-10 text-green-900 line-through decoration-red-600 decoration-4 opacity-70 text-2xl mx-2">
+                                £299
+                            </span>
                             <span className="relative z-10 bg-yellow-400 text-black px-3 py-1 rounded-lg text-lg md:text-xl font-extrabold -rotate-2 shadow-sm border-2 border-black/10">
                                 FREE 2-Day Bootcamp
                             </span>
                         </motion.button>
                     </a>
 
-                    {/* Animated Progress Bar */}
-                    <div className="w-full max-w-lg mt-14 relative z-10">
+                    {/* Progress Bar */}
+                    <div className="w-full max-w-lg mt-6 md:mt-8 relative z-10">
                         <div className="flex gap-1.5 h-3">
                             {[...Array(20)].map((_, i) => (
                                 <motion.div
@@ -154,18 +161,18 @@ const BootcampAgenda = () => {
                                     transition={{ delay: i * 0.03, type: "spring" }}
                                     viewport={{ once: true }}
                                     className={`flex-1 rounded-full ${i < 17
-                                        ? 'bg-gradient-to-t from-red-600 to-red-500 shadow-sm'
-                                        : 'bg-neutral-200'
+                                            ? 'bg-gradient-to-t from-red-600 to-red-500 shadow-sm'
+                                            : 'bg-neutral-200'
                                         }`}
                                 />
                             ))}
                         </div>
-                        <p className="text-red-600 text-center font-bold text-xs md:text-sm mt-4 uppercase tracking-widest animate-pulse">
+                        <p className="text-red-600 text-center font-bold text-xs md:text-sm mt-3 uppercase tracking-widest animate-pulse">
                             🔥 High Demand: Batch filling fast
                         </p>
                     </div>
-
                 </motion.div>
+
 
             </div>
         </section>

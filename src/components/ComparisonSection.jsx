@@ -50,16 +50,17 @@ const ComparisonSection = () => {
 
   return (
     // Reduced py-12/20 to py-10/16
-    <section className="relative py-10 md:py-16 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
+<section className="relative pb-12 md:pb-16 px-4 bg-white font-sans overflow-hidden border-t border-neutral-100">
+
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"></div>
 
       {/* Tightened max-w-5xl to max-w-4xl */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <motion.div 
+<div className="relative z-10 max-w-4xl mx-auto pt-0">
+          <motion.div 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-neutral-50 border border-neutral-200 text-neutral-500 text-[10px] font-black tracking-widest uppercase mb-4">
             <Scale className="w-3 h-3 text-emerald-600" />

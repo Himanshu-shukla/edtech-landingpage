@@ -47,7 +47,7 @@ const FAQSection = () => {
   return (
     // Background changed to neutral-50 for a clean light aesthetic
     <section 
-      className="relative py-12 md:py-24 px-4 bg-neutral-50 font-sans overflow-hidden"
+      className="relative pt-6 pb-20 px-4 bg-neutral-50 font-sans overflow-hidden"
       style={{ backgroundColor: '#f9fafb', color: '#171717' }}
     >
       
@@ -61,7 +61,7 @@ const FAQSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm">
             <Sparkles className="w-4 h-4" />

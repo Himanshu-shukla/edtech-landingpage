@@ -4,7 +4,7 @@ import { ArrowRight, Star, Clock, Calendar } from 'lucide-react';
 
 const FoundryHero = () => {
   return (
-    <section className="relative pb-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 text-neutral-900 font-sans overflow-hidden flex flex-col items-center px-4 md:px-8">
+<section className="relative min-h-[70vh] bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
       {/* Animated Background Layer 1: Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -18,7 +18,7 @@ const FoundryHero = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-emerald-400/30 via-teal-400/20 to-transparent rounded-full blur-3xl"
+          className="absolute -top-10 -left-40 w-96 h-48 bg-gradient-to-br from-emerald-400/30 via-teal-400/20 to-transparent rounded-full blur-3xl"
         />
         <motion.div
           animate={{
