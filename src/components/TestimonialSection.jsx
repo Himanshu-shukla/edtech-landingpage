@@ -48,24 +48,24 @@ const TestimonialSection = () => {
       image: aisha,
       text: "From basic workflows to pitching a £9,000 AI agent solution — this bootcamp completely changed how I approach consulting."
     },
-    {
-      id: 5,
-      name: "James Thornton",
-      role: "Operations Manager",
-      type: "Business Owner",
-      rating: 4.5,
-      image: james,
-      text: "The automation demos were brilliant. It took some effort to adapt them, but I’m now saving 12–15 hours a week."
-    },
-    {
-      id: 6,
-      name: "Emily Carter",
-      role: "Freelance Developer",
-      type: "Freelancer",
-      rating: 5,
-      image: emily,
-      text: "Within a month, I signed my first £14,000 automation contract. The biggest takeaway was learning how to sell outcomes instead of hours."
-    }
+    // {
+    //   id: 5,
+    //   name: "James Thornton",
+    //   role: "Operations Manager",
+    //   type: "Business Owner",
+    //   rating: 4.5,
+    //   image: james,
+    //   text: "The automation demos were brilliant. It took some effort to adapt them, but I’m now saving 12–15 hours a week."
+    // },
+    // {
+    //   id: 6,
+    //   name: "Emily Carter",
+    //   role: "Freelance Developer",
+    //   type: "Freelancer",
+    //   rating: 5,
+    //   image: emily,
+    //   text: "Within a month, I signed my first £14,000 automation contract. The biggest takeaway was learning how to sell outcomes instead of hours."
+    // }
   ];
 
   const renderStars = (rating) => {
