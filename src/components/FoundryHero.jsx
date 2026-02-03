@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Brain, Zap, Code, Shield } from 'lucide-react';
 
 const FoundryHero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Scroll hooks for the floating cards parallax effect
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-[75vh] bg-white overflow-hidden flex flex-col justify-center font-sans">
+    <section className="relative min-h-[90vh] bg-slate-50 overflow-hidden flex flex-col justify-center font-sans">
       
-      {/* --- PREMIUM ANIMATED BACKGROUND --- */}
-      <div className="absolute inset-0 w-full h-full bg-white">
+      {/* ==============================================
+          BACKGROUND LAYER
+      =============================================== */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none perspective-[2000px]">
         
-        {/* 1. The Mesh Gradients (Aurora Effect) */}
-        <div className="absolute top-0 w-full h-full overflow-hidden opacity-40">
+        {/* 1. Aurora/Mesh Gradients */}
+        <div className="absolute inset-0 opacity-40">
             <motion.div 
                 animate={{ transform: ["translate(0, 0)", "translate(10%, -10%)", "translate(0, 0)"] }}
                 transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
@@ -29,45 +37,145 @@ const FoundryHero = () => {
             />
         </div>
 
-        {/* 2. Professional Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        
+        {/* 2. THE NEW VORTEX: Rotating Wireframe Cylinder Pattern */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20 md:opacity-30 z-0">
+          <motion.div
+            className="relative w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] lg:w-[1600px] lg:h-[1600px]"
+            animate={{ rotateY: 360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            style={{ perspective: "1800px", transformStyle: "preserve-3d" }}
+          >
+            {/* Multiple rotating rings to simulate cylinder / helical wireframe */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute inset-0"
+                style={{
+                  rotateX: i * 15 - 45,            // tilt each ring differently for depth
+                  transformStyle: "preserve-3d",
+                }}
+                animate={{ rotateZ: 360 }}
+                transition={{
+                  duration: 40 + i * 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: i * 2,
+                }}
+              >
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-full h-full"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r={45 - i * 4}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="0.5"
+                    className="text-slate-500/80"
+                  />
+                  {/* Subtle connecting vertical lines (like wireframe spokes) */}
+                  {[...Array(12)].map((_, j) => (
+                    <line
+                      key={j}
+                      x1="50"
+                      y1="5"
+                      x2="50"
+                      y2="95"
+                      stroke="currentColor"
+                      strokeWidth="0.2"
+                      className="text-slate-400/50"
+                      style={{
+                        transform: `rotate(${j * 30}deg)`,
+                        transformOrigin: "50px 50px",
+                      }}
+                    />
+                  ))}
+                </svg>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* 3. Floating "Agent" Cards (Desktop Only) - Kept to fill sides */}
+        <div className="hidden md:block absolute inset-0 max-w-7xl mx-auto z-10">
+            {/* Left Card - Logic */}
+            <motion.div style={{ y: y1 }} className="absolute top-[20%] left-[2%] lg:left-[5%] p-4 bg-white/60 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl w-48">
+                <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-blue-100 rounded-lg text-blue-600"><Brain size={18} /></div>
+                    <div className="text-xs font-bold text-slate-700">Reasoning Engine</div>
+                </div>
+                <div className="space-y-2">
+                    <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
+                        <motion.div animate={{ width: ["0%", "100%"] }} transition={{ duration: 2, repeat: Infinity }} className="h-full bg-blue-500" />
+                    </div>
+                    <div className="h-1.5 w-2/3 bg-slate-200 rounded-full" />
+                </div>
+            </motion.div>
+
+            {/* Right Card - Execution */}
+            <motion.div style={{ y: y2 }} className="absolute top-[30%] right-[2%] lg:right-[5%] p-4 bg-white/60 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl w-48">
+                <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-emerald-100 rounded-lg text-emerald-600"><Zap size={18} /></div>
+                    <div className="text-xs font-bold text-slate-700">Action: Deploy</div>
+                </div>
+                <div className="flex justify-between items-center text-[10px] text-slate-500 font-mono">
+                    <span>Status:</span>
+                    <span className="text-emerald-600 font-bold">EXECUTING</span>
+                </div>
+            </motion.div>
+
+            {/* Bottom Left - Code */}
+             <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute bottom-[20%] left-[10%] p-3 bg-slate-900/5 backdrop-blur-sm rounded-xl rotate-[-6deg]">
+                <Code size={24} className="text-slate-700 opacity-50" />
+            </motion.div>
+
+            {/* Top Right - Security */}
+            <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 7, repeat: Infinity }} className="absolute top-[15%] right-[15%] p-3 bg-slate-900/5 backdrop-blur-sm rounded-xl rotate-[12deg]">
+                <Shield size={24} className="text-slate-700 opacity-50" />
+            </motion.div>
+        </div>
+
+        {/* 4. Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0" />
       </div>
 
-      {/* --- CONTENT CONTAINER --- */}
-      <div className="relative z-10 max-w-6xl mx-auto text-center pt-6 pb-12 md:pt-20 md:pb-24 px-3 md:px-4">
+      {/* ==============================================
+          FOREGROUND CONTENT
+      =============================================== */}
+      <div className="relative z-20 max-w-6xl mx-auto text-center pt-6 pb-12 md:pt-20 md:pb-24 px-3 md:px-4">
         
-        {/* Top Badge: Glassmorphism Style */}
+        {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-center mb-5 md:mb-8"
         >
-          <div className="group relative inline-flex items-center gap-2 md:gap-3 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-white/60 border border-white/50 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] backdrop-blur-md overflow-hidden hover:scale-105 transition-transform duration-300">
-            {/* Shimmer effect inside badge */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent -translate-x-full group-hover:animate-shimmer" />
-            
+          <div className="group relative inline-flex items-center gap-2 md:gap-3 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-white/80 border border-white/60 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] backdrop-blur-md overflow-hidden hover:scale-105 transition-transform duration-300">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent -translate-x-full group-hover:animate-shimmer" />
             <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-rose-600"></span>
             </span>
-            <span className="relative text-[10px] md:text-sm font-bold tracking-[0.15em] text-slate-700 uppercase">
+            <span className="relative text-[10px] md:text-sm font-bold tracking-[0.15em] text-slate-800 uppercase">
                Live Agentic AI Bootcamp
             </span>
           </div>
         </motion.div>
 
         {/* Headline Section */}
-        <div className="mb-4 md:mb-10">
+        <div className="mb-4 md:mb-10 relative">
             <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[2.75rem] md:text-8xl font-black tracking-tight leading-[0.95] md:leading-[1.05] text-slate-900 mb-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-[2.75rem] md:text-8xl font-black tracking-tight leading-[0.95] md:leading-[1.05] text-slate-900 mb-4"
             >
             Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Autonomous</span> <br className="hidden md:block" />
             <span className="relative inline-block">
-                <span className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-400 opacity-20 blur-lg hidden md:block"></span>
+                <span className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-400 opacity-30 blur-xl hidden md:block"></span>
                 <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 animate-gradient">
                 AI Systems
                 </span>
@@ -84,7 +192,7 @@ const FoundryHero = () => {
             </motion.p>
         </div>
 
-        {/* ----------------- PROFESSIONAL CTA BUTTON ----------------- */}
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -95,18 +203,13 @@ const FoundryHero = () => {
             onClick={() => setIsModalOpen(true)}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98, y: 2 }}
-            className="group relative w-full max-w-2xl overflow-hidden rounded-2xl md:rounded-3xl p-[2px] cursor-pointer shadow-[0_20px_50px_-12px_rgba(16,185,129,0.4)]"
+            className="group relative w-full max-w-2xl overflow-hidden rounded-2xl md:rounded-3xl p-[2px] cursor-pointer shadow-[0_20px_50px_-12px_rgba(16,185,129,0.4)] z-20"
           >
-            {/* Animated Border Gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 animate-spin-slow opacity-100" style={{backgroundSize: '200% 200%'}}/>
             
-            {/* Button Inner Content */}
             <div className="relative h-full bg-gradient-to-b from-emerald-500 to-emerald-700 hover:to-emerald-600 rounded-[14px] md:rounded-[22px] py-4 md:py-6 px-4 md:px-8 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 border-t border-white/20 shadow-inner">
-                
-                {/* Shine Effect */}
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent opacity-50 rounded-[14px] pointer-events-none" />
                 
-                {/* Text Content */}
                 <div className="relative z-10 flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-1 w-full text-white">
                     <span className="text-xl md:text-3xl font-black tracking-tight drop-shadow-md">
                         Join for £99
@@ -114,8 +217,6 @@ const FoundryHero = () => {
                     <span className="text-emerald-900/60 line-through decoration-red-500/80 decoration-2 md:decoration-4 text-lg md:text-2xl font-bold mix-blend-overlay">
                         £299
                     </span>
-                    
-                    {/* Free Tag */}
                     <div className="w-full md:w-auto flex justify-center mt-1 md:mt-0">
                         <span className="bg-[#FFE600] text-emerald-950 px-3 py-0.5 md:px-4 md:py-1 rounded-lg text-sm md:text-lg font-black -rotate-2 shadow-lg border border-yellow-300">
                         FREE 2-Day Bootcamp
@@ -125,7 +226,7 @@ const FoundryHero = () => {
             </div>
           </motion.button>
 
-          {/* Social Proof / Urgency - Refined */}
+          {/* Social Proof */}
           <div className="w-full max-w-sm mt-5 md:mt-8 relative z-10 px-6">
             <div className="flex items-center justify-center gap-1.5 h-1.5 md:h-2 mb-3">
               {[...Array(12)].map((_, i) => (
