@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Brain, Zap, Code, Shield } from 'lucide-react';
+import { Brain, Cpu, Globe, Zap, Code, Shield } from 'lucide-react';
 
 const FoundryHero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  // Scroll hooks for the floating cards parallax effect
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
@@ -14,93 +12,46 @@ const FoundryHero = () => {
     <section className="relative min-h-[90vh] bg-slate-50 overflow-hidden flex flex-col justify-center font-sans">
       
       {/* ==============================================
-          BACKGROUND LAYER
+          BACKGROUND LAYER: THE "HEAVY" ANIMATION
       =============================================== */}
       <div className="absolute inset-0 w-full h-full pointer-events-none perspective-[2000px]">
         
-        {/* 1. Aurora/Mesh Gradients */}
-        <div className="absolute inset-0 opacity-40">
-            <motion.div 
-                animate={{ transform: ["translate(0, 0)", "translate(10%, -10%)", "translate(0, 0)"] }}
-                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 blur-[120px] mix-blend-multiply" 
-            />
-            <motion.div 
-                animate={{ transform: ["translate(0, 0)", "translate(-10%, 10%)", "translate(0, 0)"] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-gradient-to-r from-fuchsia-300 via-pink-300 to-rose-200 blur-[120px] mix-blend-multiply" 
-            />
-            <motion.div 
-                animate={{ transform: ["translate(0, 0)", "translate(5%, -5%)", "translate(0, 0)"] }}
-                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-[20%] left-[20%] w-[60%] h-[60%] rounded-full bg-gradient-to-r from-blue-300 via-emerald-200 to-teal-200 blur-[100px] mix-blend-multiply" 
-            />
+        {/* 1. Aurora Gradients (Retained & Softened) */}
+        <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-300 blur-[120px] rounded-full mix-blend-multiply animate-blob" />
+            <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-300 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-2000" />
+            <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[50%] bg-indigo-300 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-4000" />
         </div>
 
-        {/* 2. THE NEW VORTEX: Rotating Wireframe Cylinder Pattern */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20 md:opacity-30 z-0">
-          <motion.div
-            className="relative w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] lg:w-[1600px] lg:h-[1600px]"
-            animate={{ rotateY: 360 }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            style={{ perspective: "1800px", transformStyle: "preserve-3d" }}
-          >
-            {/* Multiple rotating rings to simulate cylinder / helical wireframe */}
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute inset-0"
-                style={{
-                  rotateX: i * 15 - 45,            // tilt each ring differently for depth
-                  transformStyle: "preserve-3d",
-                }}
-                animate={{ rotateZ: 360 }}
-                transition={{
-                  duration: 40 + i * 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: i * 2,
-                }}
-              >
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-full h-full"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r={45 - i * 4}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="0.5"
-                    className="text-slate-500/80"
-                  />
-                  {/* Subtle connecting vertical lines (like wireframe spokes) */}
-                  {[...Array(12)].map((_, j) => (
-                    <line
-                      key={j}
-                      x1="50"
-                      y1="5"
-                      x2="50"
-                      y2="95"
-                      stroke="currentColor"
-                      strokeWidth="0.2"
-                      className="text-slate-400/50"
-                      style={{
-                        transform: `rotate(${j * 30}deg)`,
-                        transformOrigin: "50px 50px",
-                      }}
+        {/* 2. THE VORTEX: Rotating Wireframe Cylinder Pattern */}
+        {/* This creates the "Nugget" style 3D structure filling the empty space */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[1200px] md:h-[1200px] opacity-[0.08] z-0">
+             <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="w-full h-full relative"
+             >
+                {/* Concentric Dashed Rings */}
+                {[...Array(6)].map((_, i) => (
+                    <div 
+                        key={i}
+                        className="absolute top-1/2 left-1/2 rounded-full border border-slate-900/40"
+                        style={{
+                            width: `${30 + (i * 12)}%`,
+                            height: `${30 + (i * 12)}%`,
+                            transform: `translate(-50%, -50%) rotateX(60deg) rotateY(${i * 10}deg)`,
+                            borderStyle: i % 2 === 0 ? 'solid' : 'dashed',
+                        }}
                     />
-                  ))}
-                </svg>
-              </motion.div>
-            ))}
-          </motion.div>
+                ))}
+                 {/* Cross Lines */}
+                <div className="absolute top-0 left-1/2 w-px h-full bg-slate-900/20 -translate-x-1/2" />
+                <div className="absolute top-1/2 left-0 w-full h-px bg-slate-900/20 -translate-y-1/2" />
+             </motion.div>
         </div>
 
-        {/* 3. Floating "Agent" Cards (Desktop Only) - Kept to fill sides */}
-        <div className="hidden md:block absolute inset-0 max-w-7xl mx-auto z-10">
+        {/* 3. Floating "Agent" Cards (Desktop Only) - Fills the sides */}
+        <div className="hidden md:block absolute inset-0 max-w-7xl mx-auto z-0">
             {/* Left Card - Logic */}
             <motion.div style={{ y: y1 }} className="absolute top-[20%] left-[2%] lg:left-[5%] p-4 bg-white/60 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl w-48">
                 <div className="flex items-center gap-3 mb-2">
@@ -137,15 +88,12 @@ const FoundryHero = () => {
                 <Shield size={24} className="text-slate-700 opacity-50" />
             </motion.div>
         </div>
-
-        {/* 4. Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0" />
       </div>
 
       {/* ==============================================
           FOREGROUND CONTENT
       =============================================== */}
-      <div className="relative z-20 max-w-6xl mx-auto text-center pt-6 pb-12 md:pt-20 md:pb-24 px-3 md:px-4">
+      <div className="relative z-10 max-w-6xl mx-auto text-center pt-6 pb-12 md:pt-20 md:pb-24 px-3 md:px-4">
         
         {/* Top Badge */}
         <motion.div
@@ -254,6 +202,21 @@ const FoundryHero = () => {
       </div>
 
       <style jsx>{`
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
         @keyframes shimmer {
           100% { transform: translateX(100%); }
         }
